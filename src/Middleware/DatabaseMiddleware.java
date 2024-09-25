@@ -58,7 +58,8 @@
          Integer positivenumber = null; // Declare variable outside the try block
          try {
              // Assuming Positivenumber is a class with a validatePositiveNumber method
-             positivenumber = Positivenumber.validatePositiveNumber(amount);
+             Positivenumber positivenumber1 = new Positivenumber(amount, " validNumber" );
+             positivenumber = positivenumber1.Validator();
          } catch (Exception e) {
              throw e;
          }

@@ -13,20 +13,17 @@ import Utils.Sout; // Importing custom print utility
  *                      a valid positive number is provided.
  *********************************************************
  */
-public class Positivenumber {
+public class Positivenumber implements Validator{
 
-    /*
-     *********************************************************
-     *  @Method Name    :   validatePositiveNumber
-     *  @Description    :   Validates that the provided number 
-     *                      is positive. If not, it repeatedly 
-     *                      prompts the user for a valid input 
-     *                      until a positive integer is entered.
-     *  @param          :   number - The number to be validated
-     *  @return         :   int - A valid positive number
-     *********************************************************
-     */
-    public static int validatePositiveNumber(int number) {
+    public Integer number ;
+    public String msg;
+    public Positivenumber(Integer number, String msg) {
+        this.number=number;
+        this.msg = msg;
+    }  
+ 
+    @Override
+    public Integer Validator() {
         Scanner scanner = new Scanner(System.in); // Creating a scanner object for input
         
         // Check if the number is positive
@@ -42,4 +39,16 @@ public class Positivenumber {
         
         return number; // Return the valid positive number
     }
+    /*
+     *********************************************************
+     *  @Method Name    :   validatePositiveNumber
+     *  @Description    :   Validates that the provided number 
+     *                      is positive. If not, it repeatedly 
+     *                      prompts the user for a valid input 
+     *                      until a positive integer is entered.
+     *  @param          :   number - The number to be validated
+     *  @return         :   int - A valid positive number
+     *********************************************************
+     */
+    
 }

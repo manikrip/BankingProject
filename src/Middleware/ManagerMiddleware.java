@@ -83,9 +83,12 @@
      public static void managerexit(String email, String username, String password, String dbname, Integer amount)
              throws Exception {
          try {
-             String validemail = EmailValidator.validateEmail(email);
-             String validusername = InputValidator.validateString(username, "username "); // corrected to username
-             String validpassword = PasswordValidator.validPassword(password, "password ");
+            EmailValidator emailValidator = new EmailValidator(email, " EMAIL ");
+            String validemail = emailValidator.Validator();
+            InputValidator validator2 = new InputValidator(username, " username ");
+            String validusername = validator2.Validator();
+            PasswordValidator passwordValidator2 = new PasswordValidator(password, "Password ");
+            String validpassword = passwordValidator2.Validator();
              Employee emp = new Employee("Manager", null, null, validemail, validusername, validpassword);
              ManagerRouting.usernameexit(emp, dbname, amount);
          } catch (Exception e) {
@@ -112,9 +115,12 @@
      public static void managernotexit(String email, String username, String password, String dbname, Integer amount)
              throws Exception {
          try {
-             String validemail = EmailValidator.validateEmail(email);
-             String validusername = InputValidator.validateString(username, "username ");
-             String validpassword = PasswordValidator.validPassword(password, "Password ");
+            EmailValidator emailValidator = new EmailValidator(email, " EMAIL ");
+            String validemail = emailValidator.Validator();
+            InputValidator validator2 = new InputValidator(username, " username ");
+            String validusername = validator2.Validator();
+            PasswordValidator passwordValidator2 = new PasswordValidator(password, "Password ");
+            String validpassword = passwordValidator2.Validator();
              Employee emp = new Employee("Manager", null, null, validemail, validusername, validpassword);
              ManagerRouting.usernamenotexit(emp, dbname, amount);
          } catch (Exception e) {
@@ -199,10 +205,17 @@
      public static void createSingleAccount(String databaseName, Integer amountvalid, String branchName, String name,
              String pancard, String email, Integer amount) throws Exception {
          try {
-             String validbranchName = InputValidator.validateString(branchName, "branch ");
-             String validname = InputValidator.validateString(name, "name ");
-             String validpancard = ValidPancard.getValidPancard(pancard);
-             String validemail = EmailValidator.validateEmail(email);
+            InputValidator validator3 = new InputValidator(branchName, "Branch");
+            String validbranchName = validator3.Validator();
+             InputValidator validator = new InputValidator(name, "name");
+             String validname = validator.Validator();
+             
+
+            
+             ValidPancard  pancard1= new ValidPancard(pancard, " Pancard ");
+             String validpancard = pancard1.Validator();
+             EmailValidator emailValidator = new EmailValidator(email, " EMAIL ");
+            String validemail = emailValidator.Validator();
              Integer validamount = ParamChecker.checkParameters(amount, amountvalid);
              String accountNumber = AccountNumber.generateRandomString();
              Customer customer = new Customer(validname, validemail, validbranchName, validpancard, accountNumber,
@@ -234,11 +247,17 @@
      public static void createJointAccount(String databaseName, Integer amountvalid, String branchName, String name,
              String name1, String pancard, String pancard1, Integer amount) throws Exception {
          try {
-             String validbranchName = InputValidator.validateString(branchName, "branch ");
-             String validname = InputValidator.validateString(name, "name ");
-             String validname1 = InputValidator.validateString(name1, "name 1 ");
-             String validpancard = ValidPancard.getValidPancard(pancard);
-             String validpancard1 = ValidPancard.getValidPancard(pancard1);
+             InputValidator validator3 = new InputValidator(branchName, "Branch");
+             String validbranchName = validator3.Validator();
+             InputValidator validator = new InputValidator(name, "name");
+             String validname = validator.Validator();
+             InputValidator validator1 = new InputValidator(name, "name");
+             String validname1 = validator1.Validator();
+             ValidPancard  vpancard1= new ValidPancard(pancard, " Pancard ");
+             String validpancard = vpancard1.Validator();
+             ValidPancard  vpancard2= new ValidPancard(pancard1, " Pancard ");
+             String validpancard1 = vpancard2.Validator();
+             
  
              Integer validamount = ParamChecker.checkParameters(amount, amountvalid);
              String accountNumber = AccountNumber.generateRandomString();
@@ -272,9 +291,12 @@
      public static void updationPancard(String databaseName, Integer amountvalid, String pancard, String name,
              String email) throws Exception {
          try {
-             String validpancard = ValidPancard.getValidPancard(pancard);
-             String validname = InputValidator.validateString(name, "name ");
-             String validemail = EmailValidator.validateEmail(email);
+            ValidPancard  vpancard1= new ValidPancard(pancard, " Pancard ");
+            String validpancard = vpancard1.Validator();
+             InputValidator validator = new InputValidator(name, "name");
+             String validname = validator.Validator();
+             EmailValidator emailValidator = new EmailValidator(email, " EMAIL ");
+            String validemail = emailValidator.Validator();
              Customer customer = new Customer(validname, validemail, null, validpancard, null, null, null, null);
              ManagerRouting.updationPancard(databaseName, amountvalid, customer);
          } catch (Exception e) {
@@ -297,7 +319,8 @@
       */
      public static void softDelete(String databaseName, Integer amountvalid, String pancard) throws Exception {
          try {
-             String validpancard = ValidPancard.getValidPancard(pancard);
+            ValidPancard  vpancard1= new ValidPancard(pancard, " Pancard ");
+            String validpancard = vpancard1.Validator();
              ManagerRouting.softDelete(databaseName, amountvalid, validpancard);
          } catch (Exception e) {
              throw e;
@@ -321,7 +344,8 @@
      public static void approvedLoan(String databaseName, Integer amountvalid, String loannumber,
              String approvedrejected) throws Exception, CustomException {
          try {
-             String validLoannumber = PasswordValidator.validPassword(loannumber, " loannumber ");
+            PasswordValidator passwordValidator1 = new PasswordValidator(loannumber, " loannumber ");
+            String validLoannumber = passwordValidator1.Validator();
              if (approvedrejected.equals("Approved") || approvedrejected.equals("Rejected")) {
                  Loan loan = new Loan(validLoannumber, null, approvedrejected, null);
                  ManagerRouting.approvedLoan(databaseName, amountvalid, loan);
@@ -348,7 +372,8 @@
       */
      public static void CustomerInformation(String databaseName, Integer amountvalid, String pancard) throws Exception {
          try {
-             String validpancard = ValidPancard.getValidPancard(pancard);
+            ValidPancard  vpancard1= new ValidPancard(pancard, " Pancard ");
+            String validpancard = vpancard1.Validator();
              ManagerRouting.CustomerInformationprint(databaseName, amountvalid, validpancard);
          } catch (Exception e) {
              throw e;
@@ -370,7 +395,8 @@
       */
      public static void undoLastTransaction(String databaseName, Integer amountvalid, String accountNumber) throws Exception {
          try {
-             String validAccountnumber = InputValidator.validateString(accountNumber, " accountNumber ");
+            InputValidator validator2 = new InputValidator(accountNumber, " accountNumber ");
+            String validAccountnumber = validator2.Validator();
              ManagerRouting.undoLastTransactioncustomer(databaseName, amountvalid, validAccountnumber);
          } catch (Exception e) {
              throw e;

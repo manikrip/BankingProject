@@ -27,24 +27,13 @@
   *  @return         :   String - Valid email address
   *********************************************************
   */
- public class EmailValidator {
-  
-     public static String validateEmail(String email) {
-         Scanner scanner = new Scanner(System.in); // Scanner object for reading user input
-         
-         // Regular expression for validating an email address
-         String emailRegex = Constant.EMAILREGEX;
-         
-         // Check if the email matches the regex pattern
-         while (!email.matches(emailRegex)) {
-            Sout.print(Constant.INVALIDEMAIL); // Prompt for invalid email
-            Sout.print(Constant.VALIDEMAILENTER); // Ask for valid email
-             email = scanner.nextLine(); // Read new email input
-         }
-         
-         return email; // Return the valid email
-     }
-  
+ public class EmailValidator  implements Validator{
+    public String email ;
+    public String msg;
+    public EmailValidator(String email, String msg) {
+        this.email=email;
+        this.msg = msg;
+    }  
      /*
       *********************************************************
       *  @Method Name    :   isEmailValid
@@ -60,5 +49,23 @@
          String emailRegex = Constant.EMAILREGEX; // Retrieve regex from constants
          return email.matches(emailRegex); // Check if email matches the pattern
      }
+
+    @Override
+    public String Validator()  {
+        Scanner scanner = new Scanner(System.in); // Scanner object for reading user input
+        
+        // Regular expression for validating an email address
+        String emailRegex = Constant.EMAILREGEX;
+        
+        // Check if the email matches the regex pattern
+        while (!email.matches(emailRegex)) {
+           Sout.print(Constant.INVALIDEMAIL); // Prompt for invalid email
+           Sout.print(Constant.VALIDEMAILENTER); // Ask for valid email
+            email = scanner.nextLine(); // Read new email input
+        }
+        
+        return email; // Return the valid email
+    }
+ 
  }
  

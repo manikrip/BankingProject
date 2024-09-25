@@ -28,35 +28,27 @@ import Utils.Sout;
   *  @return         :   String - Valid input containing only letters
   *********************************************************
   */
- public class InputValidator {
-
-    public static String validateString(String input, String str) {
+ public class InputValidator implements Validator{
+    public String input ;
+    public String msg;
+    public InputValidator(String input, String msg) {
+        this.input=input;
+        this.msg = msg;
+    }  
+ 
+    @Override
+    public String Validator() {
         Scanner scanner = new Scanner(System.in);
         
         // Check if the input contains only letters
         while (!input.matches("[a-zA-Z]+")) {
            Sout.print(Constant.VALIDSTRING);
-            System.out.print("Enter a valid " +str);
+            System.out.print("Enter a valid " +msg);
             input = scanner.nextLine();
         }
         
         return input; // Return the valid string
     }
-    // Method to validate the address passed as a parameter
-    public static String validateAddress(String address) {
-        // Regular expression that allows letters, numbers, spaces, commas, and periods
-        String addressPattern = "^[a-zA-Z0-9\\s,\\.]+$";  
-        Scanner scanner = new Scanner(System.in);
 
-        // Loop to keep asking for address until it's valid
-        while (!address.matches(addressPattern)) {
-            System.out.println("Invalid address. Please enter a valid address containing letters, numbers, spaces, commas, or periods.");
-            System.out.print("Re-enter your address: ");
-            address = scanner.nextLine();
-        }
-
-    
-        return address;
-    }
  }
  

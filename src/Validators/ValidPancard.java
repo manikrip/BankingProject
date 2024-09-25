@@ -29,9 +29,16 @@
   *  @return         :   String - Valid Pan Card number
   *********************************************************
   */
-  public class ValidPancard {
-
-    public static String getValidPancard(String panCardNumber) {
+  public class ValidPancard implements Validator{
+    public String panCardNumber ;
+    public String msg;
+    public ValidPancard(String panCardNumber, String msg) {
+        this.panCardNumber=panCardNumber;
+        this.msg = msg;
+    }  
+ 
+    @Override
+    public String Validator() {
         Scanner scanner = new Scanner(System.in); // Create a Scanner instance inside the function
 
         // Keep asking for input until the provided Pan Card number is valid
@@ -48,6 +55,7 @@
         }
 
         return panCardNumber; // Return the valid Pan Card number
+
     }
  }
  

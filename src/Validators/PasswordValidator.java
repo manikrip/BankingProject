@@ -28,21 +28,32 @@
   *  @return         :   String - Valid input containing only letters and digits
   *********************************************************
   */
- public class PasswordValidator {
-     
-    public static String validPassword(String input, String str) {
+ public class PasswordValidator implements Validator{
+
+    public String input ;
+    public String msg;
+    public PasswordValidator(String input, String msg) {
+        this.input=input;
+        this.msg = msg;
+    }  
+ 
+    @Override
+    public String Validator() {
+
         Scanner scanner = new Scanner(System.in);
         
         // Check if the input contains only letters
         while (!input.matches("[a-zA-Z0-9]+")) {
             Sout.print(Constant.LETTERDIGIT);
             
-            System.out.print("Enter a valid " + str);
+            System.out.print("Enter a valid " + msg);
             input = scanner.nextLine();
         }
         
         return input; // Return the valid string
     }
+    
+    
      
  }
  

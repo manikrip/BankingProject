@@ -77,9 +77,12 @@
      public static void cashierexit(String email, String username, String password, String dbname, Integer amount)
              throws Exception {
          try {
-             String validemail = EmailValidator.validateEmail(email);
-             String validusername = InputValidator.validateString(username, "username ");
-             String validpassword = PasswordValidator.validPassword(password, "password ");
+            EmailValidator emailValidator = new EmailValidator(email, " EMAIL ");
+             String validemail = emailValidator.Validator();
+             InputValidator validator2 = new InputValidator(username, " username ");
+            String validusername = validator2.Validator();
+            PasswordValidator passwordValidator = new PasswordValidator(password, " Password ");
+            String validpassword = passwordValidator.Validator();
              Employee emp = new Employee("Cashier", null, null, validemail, validusername, validpassword);
              CashierRouting.usernameexit(emp, dbname, amount);
          } catch (Exception e) {
@@ -105,9 +108,12 @@
      public static void cashiernotexit(String email, String username, String password, String dbname, Integer amount)
              throws Exception {
          try {
-             String validemail = EmailValidator.validateEmail(email);
-             String validusername = InputValidator.validateString(username, "username ");
-             String validpassword = PasswordValidator.validPassword(password, "Password ");
+            EmailValidator emailValidator = new EmailValidator(email, " EMAIL ");
+             String validemail = emailValidator.Validator();
+             InputValidator validator2 = new InputValidator(username, " username ");
+            String validusername = validator2.Validator();
+            PasswordValidator passwordValidator = new PasswordValidator(password, " Password ");
+            String validpassword = passwordValidator.Validator();
              Employee emp = new Employee("Cashier", null, null, validemail, validusername, validpassword);
              CashierRouting.usernamenotexit(emp, dbname, amount);
          } catch (Exception e) {
@@ -167,8 +173,10 @@
      public static void singleDeposite(String databasename, Integer amountvalid, Integer amount, String accountNumber)
              throws Exception {
          try {
-             String validAccountNumber = InputValidator.validateString(accountNumber, " accountNumber ");
-             Integer validAmount = Positivenumber.validatePositiveNumber(amount);
+            InputValidator validator2 = new InputValidator(accountNumber, " accountNumber ");
+            String validAccountNumber = validator2.Validator();
+            Positivenumber positivenumber = new Positivenumber(amount, " validAccountNumber" );
+             Integer validAmount = positivenumber.Validator();
              Transaction trans = new Transaction(validAccountNumber, "Deposite", null, validAmount);
              CashierRouting.singleAccountDeposite(databasename, amountvalid, trans);
          } catch (Exception e) {
@@ -193,8 +201,10 @@
      public static void jointDeposite(String databasename, Integer amountvalid, Integer amount, String accountNumber)
              throws Exception {
          try {
-             String validAccountNumber = InputValidator.validateString(accountNumber, " accountNumber ");
-             Integer validAmount = Positivenumber.validatePositiveNumber(amount);
+            InputValidator validator2 = new InputValidator(accountNumber, " accountNumber ");
+            String validAccountNumber = validator2.Validator();
+            Positivenumber positivenumber = new Positivenumber(amount, " validNumber" );
+            Integer validAmount = positivenumber.Validator();
              Transaction trans = new Transaction(validAccountNumber, "Deposite", null, validAmount);
              CashierRouting.jointAccountDeposite(databasename, amountvalid, trans);
          } catch (Exception e) {

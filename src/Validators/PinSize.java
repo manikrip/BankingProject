@@ -15,20 +15,17 @@ import Utils.Sout; // Importing custom print utility
  *                      until a valid PIN is provided.
  *********************************************************
  */
-public class PinSize {
+public class PinSize implements Validator{
 
-    /*
-     *********************************************************
-     *  @Method Name    :   validatePin
-     *  @Description    :   Validates that the provided PIN is 
-     *                      a 4-digit number. If not, it repeatedly 
-     *                      prompts the user for a valid input 
-     *                      until a valid 4-digit PIN is entered.
-     *  @param          :   pin - The PIN to be validated
-     *  @return         :   int - A valid 4-digit PIN
-     *********************************************************
-     */
-    public static int validatePin(int pin) {
+    public Integer pin ;
+    public String msg;
+    public PinSize(Integer pin, String msg) {
+        this.pin=pin;
+        this.msg = msg;
+    }  
+ 
+    @Override
+    public Integer Validator() {
         Scanner scanner = new Scanner(System.in); // Creating a scanner object for input
 
         while (true) {
@@ -47,4 +44,17 @@ public class PinSize {
             }
         }
     }
+
+    /*
+     *********************************************************
+     *  @Method Name    :   validatePin
+     *  @Description    :   Validates that the provided PIN is 
+     *                      a 4-digit number. If not, it repeatedly 
+     *                      prompts the user for a valid input 
+     *                      until a valid 4-digit PIN is entered.
+     *  @param          :   pin - The PIN to be validated
+     *  @return         :   int - A valid 4-digit PIN
+     *********************************************************
+     */
+   
 }
