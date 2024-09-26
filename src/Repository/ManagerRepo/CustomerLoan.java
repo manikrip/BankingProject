@@ -70,8 +70,7 @@ public class CustomerLoan {
                     insertLoanStatement.setString(4, "Approved");
                     int resultSet = insertLoanStatement.executeUpdate();
                     if (resultSet > 0) {
-                        Sout.print(Constant.SUCCESSFULLYCREATED);
-                        CustomerView.customerFunction(databasename, amountvalid);
+                        throw new CustomException(Constant.SUCCESSFULLYCREATED);
                     } else {
                         throw new CustomException(Constant.UNSUCCESSFULLYCREATED);
                     }

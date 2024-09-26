@@ -62,8 +62,7 @@ public class CustomerapprovedLoan {
                 // Execute the update and check if successful
                 int rowsAffected = updatePreparedStatement.executeUpdate();
                 if (rowsAffected > 0) {
-                    Sout.print(Constant.SUCCESSFULLYCREATED);
-                    ManagerView.managerfunction(databaseName, amountvalid); // Redirect to manager functionality
+                    throw new CustomException(Constant.SUCCESSFULLYCREATED);
                 } else {
                     throw new CustomException(Constant.UNSUCCESSFULLYCREATED);
                 }

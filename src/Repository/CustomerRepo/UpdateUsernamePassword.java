@@ -51,7 +51,7 @@ import Utils.Constant;
              int rowsAffected = updateStatement.executeUpdate();
   
              if (rowsAffected > 0) {
-                 HomePageview.homePage(Database, amount);
+                throw new CustomException(Constant.USERNAMEPASSWORD);
              } else {
                  throw new CustomException(Constant.UNSUCCESSFULLYCREATED);
              }

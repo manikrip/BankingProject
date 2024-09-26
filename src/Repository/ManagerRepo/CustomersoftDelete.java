@@ -60,8 +60,7 @@ public class CustomersoftDelete {
  
                 // Check if the update was successful
                 if (rowsAffected > 0) {
-                    Sout.print(Constant.SUCCESSFULLYCREATED);
-                    ManagerView.managerfunction(databaseName, amountvalid); // Redirect to manager functionality
+                    throw new CustomException(Constant.SUCCESSFULLYCREATED);
                 } else {
                     throw new CustomException(Constant.UNSUCCESSFULLYCREATED);
                 }

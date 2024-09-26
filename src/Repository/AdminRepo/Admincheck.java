@@ -60,8 +60,7 @@ import Utils.Constant;
                  boolean loginSuccessful = loginProcess.login(emp, dbname);
  
                  if (loginSuccessful) {
-                     // Redirect to admin functions if login is successful
-                     Adminview.adminFunction(dbname, amount);
+                     throw new CustomException(Constant.SUCCESSFULLYCREATED);
                  } else {
                      // Handle incorrect password scenario
                      throw new CustomException(Constant.UNSUCCESSFULLYCREATED);

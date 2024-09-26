@@ -12,7 +12,7 @@ public class Constant {
     public static void viewDatabase() {
         System.out.println("Welcome to the Bank Application.");
         System.out.println("First, you need to create your bank database to proceed.");
-        System.out.println("Enter the database name");
+        System.out.println("Enter the database name   ");
     }
 
     public static void Adminoption() {
@@ -47,14 +47,14 @@ public class Constant {
     }
     public static void customeroption() {
         // Display the customer page options
-        System.out.println("1 => Create your PIN");
-        System.out.println("2 => Create a joint PIN");
-        System.out.println("3 => Withdraw money from a single account");
-        System.out.println("4 => Withdraw money from a joint account");
-        System.out.println("5 => Take a loan");
-        System.out.println("6 => Print the passbook");
-        System.out.println("7 => Return to the home page");
-        System.out.println("Please enter the option:");
+        System.out.println("1 => Create your PIN  ");
+        System.out.println("2 => Create a joint PIN  ");
+        System.out.println("3 => Withdraw money from a single account  ");
+        System.out.println("4 => Withdraw money from a joint account   ");
+        System.out.println("5 => Take a loan  ");
+        System.out.println("6 => Print the passbook ");
+        System.out.println("7 => Return to the home page ");
+        System.out.println("Please enter the option: ");
     }
     public static void LoginSingupOption() {
 
@@ -71,7 +71,7 @@ public class Constant {
     public final static String VALIDSTRING ="Invalid input. Please enter only letters.";
     public final static String EMAILREGEX = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$";
      public final static String INVALIDEMAIL = "Invalid email format. Please enter a valid email address.";
-     public final static String VALIDEMAILENTER = "Enter the valid mail";
+     public final static String VALIDEMAILENTER = "Enter the valid mail ";
     public final static String UPDATEACCOUNT = "UPDATE account SET name = ?, email = ? WHERE pancard = ? AND isActive = TRUE";
     public final static String JOINTEMAILQUERY = "SELECT panCard FROM jointAccount WHERE panCard = ?";
     public final static String EMAILMODIFY = "1@gmail.com";
@@ -186,25 +186,29 @@ public class Constant {
     // as 'Admin'
     public final static String insertEmployeeQuery = "INSERT INTO Employee (email, name, designation) VALUES (?, ?, ?)";
     public final static String VALIDEMAIL = "Invalid email";
-    public final static String ADMINNAME = "Enter the admin name";
-    public final static String ADMINEMAIL = "Enter the admin email";
-    public final static String ADMINUSERNAME = "Enter the admin username";
-    public final static String ADMINPASSWORD = "Enter the admin Password";
-    public final static String NAME = "Enter the name";
-    public final static String USERNAME = "Enter the username";
-    public final static String PASSWORD = "Enter the Password";
-    public final static String EMAIL = "Enter the Email";
-    public final static String CUSTOMER = "You are enter into customer";
-    public final static String MANAGER = "You are enter into manager";
-    public final static String CASHIER = "You are enter into cashier";
-    public final static String ADMIN = "You are enter into admin";
+    public final static String ADMINNAME = "Enter the admin name  ";
+    public final static String ADMINEMAIL = "Enter the admin email  ";
+    public final static String ADMINUSERNAME = "Enter the admin username  ";
+    public final static String ADMINPASSWORD = "Enter the admin Password  ";
+    public final static String NAME = "Enter the name  ";
+    public final static String USERNAME = "Enter the username  ";
+    public final static String PASSWORD = "Enter the Password  ";
+    public final static String EMAIL = "Enter the Email  ";
+    public final static String CUSTOMER = "You are enter into customer  ";
+    public final static String MANAGER = "You are enter into manager  ";
+    public final static String CASHIER = "You are enter into cashier  ";
+    public final static String ADMIN = "You are enter into admin  ";
     public final static String EXIT = "You are existing!!! Thank you for using the application.";
     public final static String WRONGOPTION = "You are entering the wrong option";
     public final static String WRONGEMAIL = "You are entering the wrong email";
-    public final static String BRANCHNAME = "Enter the Branch name";
-    public final static String CITY = "Enter the CITY name";
-    public final static String ADDRESS = "Enter the Address name";
-
+    public final static String BRANCHNAME = "Enter the Branch name"  ;
+    public final static String CITY = "Enter the CITY name  ";
+    public final static String ADDRESS = "Enter the Address name  ";
+    public final static String ADDRESSName = "Enter the correct Address name  ";
+    public final static String CASHIERLOGIN = "Cashier Successfully login ";
+    public final static String MANAGERLOGIN = "Manager Successfully login  ";
+    public final static String CUSTOMERLOGIN = "Customer Successfully login  ";
+    public final static String USERNAMEPASSWORD = "Successfully updated";
     public static void Homepageoption() {
         // Display the home page options
         System.out.println("1 => Customer");

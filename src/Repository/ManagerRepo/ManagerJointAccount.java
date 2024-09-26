@@ -107,8 +107,7 @@ import Utils.Constant;
                          int emailInsertResult = insertEmail.executeUpdate();
  
                          if (jointAccountInsertResult > 0 && emailInsertResult > 0) {
-                             Sout.print(Constant.SUCCESSFULLYCREATED);
-                             ManagerView.managerfunction(databaseName, amountvalid);
+                            throw new CustomException(Constant.SUCCESSFULLYCREATED);
                          } else {
                              throw new CustomException(Constant.UNSUCCESSFULLYCREATED);
                          }

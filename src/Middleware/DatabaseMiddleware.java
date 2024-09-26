@@ -15,7 +15,7 @@
  import Routing.Databaserouting;
  import Utils.Constant;
  import Utils.CustomException;
- import Validators.Positivenumber;
+
  
  /*
   *********************************************************
@@ -29,7 +29,7 @@
   *  @throws         :   Exception - Throws exception if the database name is invalid
   *********************************************************
   */
- public class DatabaseMiddleware  {
+ public class DatabaseMiddleware extends BaseMiddleware  {
      public static void databaseMiddleware(String dbname) throws Exception {
          try {
              if (dbname.matches("[a-zA-Z]+")) {
@@ -54,16 +54,16 @@
       *  @return         :   Integer - Validated positive amount
       *********************************************************
       */
-     public static Integer databaseAmount(Integer amount) {
-         Integer positivenumber = null; // Declare variable outside the try block
-         try {
-             // Assuming Positivenumber is a class with a validatePositiveNumber method
-             Positivenumber positivenumber1 = new Positivenumber(amount, " validNumber" );
-             positivenumber = positivenumber1.Validator();
-         } catch (Exception e) {
-             throw e;
-         }
-         return positivenumber; // Return the positive number
-     }
+    //  public static Integer databaseAmount(Integer amount) throws Exception{
+    //      Integer positivenumber = null; // Declare variable outside the try block
+    //      try {
+    //          // Assuming Positivenumber is a class with a validatePositiveNumber method
+    //          Positivenumber positivenumber1 = new Positivenumber(amount, " validNumber" );
+    //          positivenumber = positivenumber1.Validator();
+    //      } catch (Exception e) {
+    //          throw e;
+    //      }
+    //      return positivenumber; // Return the positive number
+    //  }
  }
  

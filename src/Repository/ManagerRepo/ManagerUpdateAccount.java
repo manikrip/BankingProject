@@ -64,8 +64,7 @@ import Utils.Constant;
  
                  // Notify user of the success or failure of the update
                  if (rowsAffected > 0) {
-                     Sout.print(Constant.SUCCESSFULLYCREATED);
-                     ManagerView.managerfunction(databaseName, amountvalid);
+                    throw new CustomException(Constant.SUCCESSFULLYCREATED);
                  } else {
                      throw new CustomException(Constant.UNSUCCESSFULLYCREATED);
                  }

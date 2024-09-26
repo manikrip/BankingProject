@@ -54,8 +54,7 @@ import Utils.Constant;
                  boolean loginSuccessful = loginProcess.login(emp, databaseName);
  
                  if (loginSuccessful) {
-                     // If login is successful, forward to manager functionality
-                     ManagerView.managerfunction(databaseName, amountvalid);
+                    throw new CustomException(Constant.MANAGERLOGIN);
                  } else {
                      throw new CustomException(Constant.UNSUCCESSFULLYCREATED);
                  }

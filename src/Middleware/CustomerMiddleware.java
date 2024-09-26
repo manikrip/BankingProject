@@ -17,11 +17,6 @@
  import Routing.CustomerRouting;
  import Utils.Constant;
  import Utils.CustomException;
- import Validators.EmailValidator;
- import Validators.InputValidator;
- import Validators.PasswordValidator;
- import Validators.PinSize;
- import Validators.Positivenumber;
  import view.CustomerView;
  import view.HomePageview;
  
@@ -38,7 +33,7 @@
   *  @return         :   void
   *********************************************************
   */
- public class CustomerMiddleware {
+ public class CustomerMiddleware extends BaseMiddleware {
  
      public static void validateLoginOption(String databaseName, Integer amountvalid, String option)
              throws Exception, CustomException {
@@ -78,13 +73,8 @@
      public static void customerexit(String email, String username, String password, String dbname, Integer amount)
              throws Exception {
          try {
-            EmailValidator emailValidator = new EmailValidator(email, " EMAIL ");
-            String validemail = emailValidator.Validator();
-            InputValidator validator2 = new InputValidator(username, " username ");
-            String validusername = validator2.Validator();
-            PasswordValidator passwordValidator2 = new PasswordValidator(password, "Password ");
-            String validpassword = passwordValidator2.Validator();
-             Login log = new Login(validusername, validpassword, validemail);
+           
+             Login log = new Login(username, password, email);
              CustomerRouting.usernameexit(log, dbname, amount);
          } catch (Exception e) {
              throw e;
@@ -109,13 +99,9 @@
      public static void customernotexit(String email, String username, String password, String dbname, Integer amount)
              throws Exception {
          try {
-            EmailValidator emailValidator = new EmailValidator(email, " EMAIL ");
-            String validemail = emailValidator.Validator();
-            InputValidator validator2 = new InputValidator(username, " username ");
-            String validusername = validator2.Validator();
-            PasswordValidator passwordValidator2 = new PasswordValidator(password, "Password ");
-            String validpassword = passwordValidator2.Validator();
-             Login log = new Login(validusername, validpassword, validemail);
+            
+      
+             Login log = new Login(username, password, email);
              CustomerRouting.usernamenotexit(log, dbname, amount);
          } catch (Exception e) {
              throw e;
@@ -184,11 +170,8 @@
      public static void createPinSingle(String accountNumber, Integer pin, String databasename, Integer amountvalid)
              throws Exception {
          try {
-            InputValidator validator2 = new InputValidator(accountNumber, " accountNumber ");
-            String validAccountNumber = validator2.Validator();
-            PinSize pinSize = new PinSize(pin, " pin ");
-             Integer validpin = pinSize.Validator();
-             CustomerRouting.createPinSingle(validAccountNumber, validpin, databasename, amountvalid);
+            
+             CustomerRouting.createPinSingle(accountNumber, pin, databasename, amountvalid);
          } catch (Exception e) {
              // Handle exceptions here
          }
@@ -211,11 +194,8 @@
      public static void createPinJoint(String accountNumber, Integer pin, String databasename, Integer amountvalid)
              throws Exception {
          try {
-            InputValidator validator2 = new InputValidator(accountNumber, " accountNumber ");
-            String validAccountNumber = validator2.Validator();
-            PinSize pinSize = new PinSize(pin, " pin ");
-             Integer validpin = pinSize.Validator();
-             CustomerRouting.createPinJoint(validAccountNumber, validpin, databasename, amountvalid);
+          
+             CustomerRouting.createPinJoint(accountNumber, pin, databasename, amountvalid);
          } catch (Exception e) {
              // Handle exceptions here
          }
@@ -239,13 +219,8 @@
      public static void withdrawSingle(String accountNumber, Integer pin, Integer amount, String databasename,
              Integer amountvalid) throws Exception {
          try {
-            InputValidator validator2 = new InputValidator(accountNumber, " accountNumber ");
-            String validAccountNumber = validator2.Validator();
-            PinSize pinSize = new PinSize(pin, " pin ");
-            Integer validpin = pinSize.Validator();
-            Positivenumber positivenumber = new Positivenumber(amount, " validNumber" );
-            Integer validamount = positivenumber.Validator();
-             CustomerRouting.withdrawSingle(validAccountNumber, validpin, validamount, databasename, amountvalid);
+          
+             CustomerRouting.withdrawSingle(accountNumber, pin, amount, databasename, amountvalid);
          } catch (Exception e) {
              throw e;
          }
@@ -269,13 +244,8 @@
      public static void withdrawJoint(String accountNumber, Integer pin, Integer amount, String databasename,
              Integer amountvalid) throws Exception {
          try {
-            InputValidator validator2 = new InputValidator(accountNumber, " accountNumber ");
-            String validAccountNumber = validator2.Validator();
-            PinSize pinSize = new PinSize(pin, " pin ");
-            Integer validpin = pinSize.Validator();
-            Positivenumber positivenumber = new Positivenumber(amount, " validNumber" );
-            Integer validamount = positivenumber.Validator();
-             CustomerRouting.withdrawJoint(validAccountNumber, validpin, validamount, databasename, amountvalid);
+           
+             CustomerRouting.withdrawJoint(accountNumber, pin, amount, databasename, amountvalid);
          } catch (Exception e) {
              throw e;
          }
@@ -299,13 +269,8 @@
      public static void createloan(String panNumber, String loanNumber, Integer loanAmount, String databasename,
              Integer amountvalid) throws Exception {
          try {
-            PasswordValidator passwordValidator = new PasswordValidator(panNumber, " Password ");
-            String validpannumber = passwordValidator.Validator();
-             PasswordValidator passwordValidator1 = new PasswordValidator(loanNumber, " LoanNumber ");
-             String validLoannumber = passwordValidator1.Validator();
-             Positivenumber positivenumber = new Positivenumber(loanAmount, " validLoanamount" );
-             Integer validLoanamount = positivenumber.Validator();
-             Loan loan = new Loan(validLoannumber, validpannumber, "Pending", validLoanamount);
+           
+             Loan loan = new Loan(loanNumber, panNumber, "Pending", loanAmount);
              CustomerRouting.createLoan(loan, databasename, amountvalid);
          } catch (Exception e) {
              throw e;
@@ -326,12 +291,13 @@
       */
      public static void printpassbook(String panNumber, String databasename, Integer amountvalid) throws Exception {
          try {
-            PasswordValidator passwordValidator = new PasswordValidator(panNumber, " Password ");
-            String validpannumber = passwordValidator.Validator();
-             CustomerRouting.printpassbookCustomer(validpannumber, databasename, amountvalid);
+          
+             CustomerRouting.printpassbookCustomer(panNumber, databasename, amountvalid);
          } catch (Exception e) {
              throw e;
          }
      }
+
+    
  }
  

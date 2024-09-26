@@ -11,9 +11,9 @@
 
  package Validators;
 
- import java.util.Scanner; // Importing Scanner for user input
  import Utils.Constant; // Importing constants for standardized messages
- import Utils.Sout; // Importing custom print utility
+import Utils.CustomException;
+
  
  /*
   *********************************************************
@@ -44,28 +44,18 @@
       *  @return         :   boolean - True if email matches the pattern, false otherwise
       *********************************************************
       */
+ 
+      @Override
+      public String Validator() throws CustomException {
+          String emailRegex = Constant.EMAILREGEX;
       
-     private static boolean isEmailValid(String email) {
-         String emailRegex = Constant.EMAILREGEX; // Retrieve regex from constants
-         return email.matches(emailRegex); // Check if email matches the pattern
-     }
-
-    @Override
-    public String Validator()  {
-        Scanner scanner = new Scanner(System.in); // Scanner object for reading user input
-        
-        // Regular expression for validating an email address
-        String emailRegex = Constant.EMAILREGEX;
-        
-        // Check if the email matches the regex pattern
-        while (!email.matches(emailRegex)) {
-           Sout.print(Constant.INVALIDEMAIL); // Prompt for invalid email
-           Sout.print(Constant.VALIDEMAILENTER); // Ask for valid email
-            email = scanner.nextLine(); // Read new email input
-        }
-        
-        return email; // Return the valid email
-    }
+          // Validate email against regex
+          if (!email.matches(emailRegex)) {
+              throw new CustomException(Constant.INVALIDEMAIL); // Throw exception if invalid
+          }
+          
+          return email; // Return valid email
+      }
  
  }
  

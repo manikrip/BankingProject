@@ -54,6 +54,10 @@ import Utils.Constant;
              if (branchResultSet.next()) {
                  // Branch exists, proceed to insert account details
                  String accountInsertQuery = Constant.ACCOUNTINSERTQUERY;
+                 // SQL query to insert the email into the password store
+                 String passwordInsertQuery = Constant.USERPASSWORD;
+                 PreparedStatement passwordInsertStatement = connection.prepareStatement(passwordInsertQuery);
+                 passwordInsertStatement.setString(1, customer.getEmail());
                  PreparedStatement accountInsertStatement = connection.prepareStatement(accountInsertQuery);
                  accountInsertStatement.setString(1, customer.getBranchName());
                  accountInsertStatement.setString(2, customer.getName());
@@ -62,19 +66,27 @@ import Utils.Constant;
                  accountInsertStatement.setString(5, customer.getEmail());
                  accountInsertStatement.setString(6, customer.getAccountNumber());
  
-                 // SQL query to insert the email into the password store
-                 String passwordInsertQuery = Constant.USERPASSWORD;
-                 PreparedStatement passwordInsertStatement = connection.prepareStatement(passwordInsertQuery);
-                 passwordInsertStatement.setString(1, customer.getEmail());
+                 
  
                  // Execute the insert operations
-                 int accountRowsAffected = accountInsertStatement.executeUpdate();
                  int passwordRowsAffected = passwordInsertStatement.executeUpdate();
+                 int accountRowsAffected = accountInsertStatement.executeUpdate();
+                 
  
                  // Check if both insertions were successful
-                 if (accountRowsAffected > 0 && passwordRowsAffected > 0) {
-                     Sout.print(Constant.SUCCESSFULLYCREATED);
-                     ManagerView.managerfunction(databaseName, amountvalid);
+                 if (passwordRowsAffected > 0) {
+
+
+
+                    if(accountRowsAffected > 0 )
+                    {
+                        throw new CustomException(Constant.SUCCESSFULLYCREATED);
+                    }
+                    else
+                    {
+                        throw new CustomException(Constant.UNSUCCESSFULLYCREATED);
+                    }
+                   
                  } else {
                      throw new CustomException(Constant.UNSUCCESSFULLYCREATED);
                  }

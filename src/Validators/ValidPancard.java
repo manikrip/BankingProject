@@ -11,12 +11,9 @@
  */
 
  package Validators;
+import Utils.Constant;
+import Utils.CustomException;
 
- import java.util.Scanner;
- 
- import Utils.Constant;
- import Utils.Sout;
- 
  /*
  *********************************************************
   *  @Method Name    :   getValidPancard
@@ -38,22 +35,16 @@
     }  
  
     @Override
-    public String Validator() {
-        Scanner scanner = new Scanner(System.in); // Create a Scanner instance inside the function
-
-        // Keep asking for input until the provided Pan Card number is valid
-        while (panCardNumber.isEmpty() || panCardNumber.length() != 12 || !panCardNumber.matches("[a-zA-Z0-9]+")) {
-            if (panCardNumber.isEmpty()) {
-                     Sout.print(Constant.INVALIDPANCARD);
-            } else if (panCardNumber.length() != 12) {
-                Sout.print(Constant.PANCARDSIZE);
-            } else if (!panCardNumber.matches("[a-zA-Z0-9]+")) {
-                
-                Sout.print(Constant.PANCARDD);
-            }
-            panCardNumber = scanner.nextLine().trim(); // Read and trim input from the user
+    public String Validator() throws CustomException {
+       try {
+        if(panCardNumber.isEmpty() || panCardNumber.length() != 12 || !panCardNumber.matches("[a-zA-Z0-9]+"))
+        {
+            throw new CustomException(Constant.INVALIDPANCARD);
         }
-
+       } catch (Exception e) {
+        throw e;
+       }
+       
         return panCardNumber; // Return the valid Pan Card number
 
     }

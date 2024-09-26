@@ -67,8 +67,9 @@ import Utils.Constant;
                  int rowsAffected = insertBranchStatement.executeUpdate();
  
                  if (rowsAffected > 0) {
-                     Sout.print(Constant.SUCCESSFULLYCREATED); // Notify success
-                     Adminview.adminFunction(dbname, amount); // Redirect to admin functions
+                    
+                     throw new CustomException(Constant.SUCCESSFULLYCREATED);
+                     
                  } else {
                      throw new CustomException(Constant.UNSUCCESSFULLYCREATED); // Notify failure
                  }

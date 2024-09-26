@@ -59,8 +59,7 @@ public class CustomerJointPin {
 
                     int rowsUpdated = updatePreparedStatement.executeUpdate();
                     if (rowsUpdated > 0) {
-                        Sout.print(Constant.SUCCESSFULLYCREATED);
-                        CustomerView.customerFunction(databasename, amountvalid);
+                        throw new CustomException(Constant.SUCCESSFULLYCREATED);
                     } else {
                         throw new CustomException(Constant.UNSUCCESSFULLYCREATED);
                     }

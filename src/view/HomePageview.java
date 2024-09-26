@@ -13,7 +13,8 @@
  package view;
 
  import Middleware.HomepageMiddleware;
- import Utils.Constant;
+import Pojo.Customer;
+import Utils.Constant;
  import Utils.TakingInput;
  
  /*
@@ -37,8 +38,24 @@
              String option = TakingInput.input().nextLine();
              HomepageMiddleware.homepageMiddleware(option, databaseName, amountvalid);
          } catch (Exception e) {
-             System.out.println(e.getMessage());
-             homePage(databaseName, amountvalid);
+
+            if(e.getMessage().equals(Constant.CASHIERLOGIN))
+            {
+                CashierView.cashierFunction(databaseName, amountvalid);
+            }
+            else if (e.getMessage().equals(Constant.MANAGERLOGIN)) {
+                ManagerView.managerfunction(databaseName, amountvalid);
+            }
+            else if (e.getMessage().equals(Constant.CUSTOMERLOGIN)) {
+                CustomerView.customerFunction(databaseName, amountvalid);
+            }
+            else{
+                System.out.println(e.getMessage());
+                homePage(databaseName, amountvalid);
+            }
+
+
+            
          }
      }
  }

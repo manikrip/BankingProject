@@ -17,9 +17,7 @@
  import Routing.CashierRouting;
  import Utils.Constant;
  import Utils.CustomException;
- import Validators.EmailValidator;
  import Validators.InputValidator;
- import Validators.PasswordValidator;
  import Validators.Positivenumber;
  import view.CashierView;
  import view.HomePageview;
@@ -37,7 +35,7 @@
   *  @return         :   void
   *********************************************************
   */
- public class CashierMiddleware {
+ public class CashierMiddleware extends BaseMiddleware{
  
      public static void validateLoginOption(String databaseName, Integer amountvalid, String option)
              throws Exception, CustomException {
@@ -77,13 +75,8 @@
      public static void cashierexit(String email, String username, String password, String dbname, Integer amount)
              throws Exception {
          try {
-            EmailValidator emailValidator = new EmailValidator(email, " EMAIL ");
-             String validemail = emailValidator.Validator();
-             InputValidator validator2 = new InputValidator(username, " username ");
-            String validusername = validator2.Validator();
-            PasswordValidator passwordValidator = new PasswordValidator(password, " Password ");
-            String validpassword = passwordValidator.Validator();
-             Employee emp = new Employee("Cashier", null, null, validemail, validusername, validpassword);
+            
+             Employee emp = new Employee("Cashier", null, null, email, username, password);
              CashierRouting.usernameexit(emp, dbname, amount);
          } catch (Exception e) {
              throw e;
@@ -108,13 +101,9 @@
      public static void cashiernotexit(String email, String username, String password, String dbname, Integer amount)
              throws Exception {
          try {
-            EmailValidator emailValidator = new EmailValidator(email, " EMAIL ");
-             String validemail = emailValidator.Validator();
-             InputValidator validator2 = new InputValidator(username, " username ");
-            String validusername = validator2.Validator();
-            PasswordValidator passwordValidator = new PasswordValidator(password, " Password ");
-            String validpassword = passwordValidator.Validator();
-             Employee emp = new Employee("Cashier", null, null, validemail, validusername, validpassword);
+           
+            
+             Employee emp = new Employee("Cashier", null, null, email, username, password);
              CashierRouting.usernamenotexit(emp, dbname, amount);
          } catch (Exception e) {
              throw e;
@@ -173,11 +162,7 @@
      public static void singleDeposite(String databasename, Integer amountvalid, Integer amount, String accountNumber)
              throws Exception {
          try {
-            InputValidator validator2 = new InputValidator(accountNumber, " accountNumber ");
-            String validAccountNumber = validator2.Validator();
-            Positivenumber positivenumber = new Positivenumber(amount, " validAccountNumber" );
-             Integer validAmount = positivenumber.Validator();
-             Transaction trans = new Transaction(validAccountNumber, "Deposite", null, validAmount);
+             Transaction trans = new Transaction(accountNumber, "Deposite", null, amount);
              CashierRouting.singleAccountDeposite(databasename, amountvalid, trans);
          } catch (Exception e) {
              throw e;
@@ -201,15 +186,14 @@
      public static void jointDeposite(String databasename, Integer amountvalid, Integer amount, String accountNumber)
              throws Exception {
          try {
-            InputValidator validator2 = new InputValidator(accountNumber, " accountNumber ");
-            String validAccountNumber = validator2.Validator();
-            Positivenumber positivenumber = new Positivenumber(amount, " validNumber" );
-            Integer validAmount = positivenumber.Validator();
-             Transaction trans = new Transaction(validAccountNumber, "Deposite", null, validAmount);
+           
+             Transaction trans = new Transaction(accountNumber, "Deposite", null, amount);
              CashierRouting.jointAccountDeposite(databasename, amountvalid, trans);
          } catch (Exception e) {
              throw e;
          }
      }
+
+ 
  }
  

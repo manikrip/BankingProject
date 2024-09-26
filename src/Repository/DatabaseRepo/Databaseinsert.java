@@ -44,12 +44,10 @@
              int result = preparedStatement.executeUpdate();
  
              // Check if the database was successfully created
-             if (result > 0) {
-                Sout.print(Constant.SUCCESSFULLYCREATED + dbname); 
-             } else {
-                 Error er = new Error();
-                 throw new CustomException(Constant.DATABASEERROR);
-             }
+             if (result < 0) {
+                Error er = new Error();
+                throw new CustomException(Constant.DATABASEERROR); 
+             } 
  
              // Clean up resources by closing the statement and connection
              preparedStatement.close();

@@ -15,7 +15,8 @@
  import java.util.Scanner;
  
  import Utils.Constant;
- import Utils.Sout;
+import Utils.CustomException;
+import Utils.Sout;
  
  /*
  *********************************************************
@@ -38,17 +39,19 @@
     }  
  
     @Override
-    public String Validator() {
+    public String Validator() throws  CustomException{
 
-        Scanner scanner = new Scanner(System.in);
+     try {
+        if (!input.matches("[a-zA-Z0-9]+")) 
+        {
+            throw new CustomException(Constant.LETTERDIGIT);
+        }
+     } catch (Exception e) {
+      throw e;
+     }
         
         // Check if the input contains only letters
-        while (!input.matches("[a-zA-Z0-9]+")) {
-            Sout.print(Constant.LETTERDIGIT);
-            
-            System.out.print("Enter a valid " + msg);
-            input = scanner.nextLine();
-        }
+    
         
         return input; // Return the valid string
     }

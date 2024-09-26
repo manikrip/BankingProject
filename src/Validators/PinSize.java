@@ -4,6 +4,7 @@ import java.util.InputMismatchException; // Import for handling input mismatch e
 import java.util.Scanner; // Importing Scanner for user input
 
 import Utils.Constant; // Importing constants for standardized messages
+import Utils.CustomException;
 import Utils.Sout; // Importing custom print utility
 
 /*
@@ -25,24 +26,17 @@ public class PinSize implements Validator{
     }  
  
     @Override
-    public Integer Validator() {
-        Scanner scanner = new Scanner(System.in); // Creating a scanner object for input
+    public Integer Validator() throws  CustomException{
 
-        while (true) {
-            try {
-                // Check if the initial PIN is a 4-digit number
-                if (pin >= 1000 && pin <= 9999) {
-                    return pin; // Return the valid PIN if it is 4 digits
-                } else {
-                    Sout.print(Constant.PINSIZE); // Prompt for a valid PIN
-                    pin = scanner.nextInt(); // Ask user to re-enter the PIN
-                }
-            } catch (InputMismatchException e) {
-                // Handle the situation where user enters non-numeric characters
-                Sout.print(Constant.PINSIZE); // Prompt for a valid PIN
-                scanner.next(); // Consume the invalid input to prevent an infinite loop
-            }
+     try {
+        if (pin <= 1000 && pin >= 9999) {
+            throw new CustomException(Constant.PINSIZE);
         }
+     } catch (Exception e) {
+      throw e;
+     }
+       
+     return pin;
     }
 
     /*

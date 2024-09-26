@@ -53,9 +53,7 @@ public class CustomerUservalid {
                 boolean loginSuccessful = loginProcess.login(log, dbname);
 
                 if (loginSuccessful) {
-                    // If login is successful, forward to customer functionality
-                    Sout.print(Constant.SUCCESSFULLYCREATED);
-                    CustomerView.customerFunction(dbname, amount);
+                    throw new CustomException(Constant.CUSTOMERLOGIN);
                 } else {
                     // Throw an exception if the password verification fails
                     throw new CustomException(Constant.UNSUCCESSFULLYCREATED);

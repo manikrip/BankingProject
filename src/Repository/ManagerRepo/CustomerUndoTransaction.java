@@ -91,12 +91,12 @@ public class CustomerUndoTransaction {
                         int deleteResult = deleteTransactionPs.executeUpdate();
 
                         if (deleteResult > 0) {
-                            Sout.print(Constant.SUCCESSFULLYCREATED);
-                            ManagerView.managerfunction(databaseName, amountvalid);
+                            throw new CustomException(Constant.SUCCESSFULLYCREATED);
+                            
                         } else {
                             throw new CustomException(Constant.UNSUCCESSFULLYCREATED);
                         }
-                        deleteTransactionPs.close();
+                     
                     } else {
                         throw new CustomException(Constant.UNSUCCESSFULLYCREATED);
                     }

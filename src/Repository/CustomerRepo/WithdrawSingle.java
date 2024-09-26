@@ -72,8 +72,7 @@ import Utils.Constant;
                      int updateResult = updateBalanceStatement.executeUpdate();
  
                      if (transactionResult > 0 && updateResult > 0) {
-                         Sout.print(Constant.SUCCESSFULLYCREATED);
-                         CustomerView.customerFunction(databasename, amountvalid);
+                        throw new CustomException(Constant.SUCCESSFULLYCREATED);
                      } else {
                          throw new CustomException(Constant.UNSUCCESSFULLYCREATED);
                      }

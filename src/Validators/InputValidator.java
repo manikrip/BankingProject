@@ -15,6 +15,7 @@
  import java.util.Scanner;
 
 import Utils.Constant;
+import Utils.CustomException;
 import Utils.Sout;
  
  /*
@@ -37,16 +38,20 @@ import Utils.Sout;
     }  
  
     @Override
-    public String Validator() {
+    public String Validator() throws CustomException {
         Scanner scanner = new Scanner(System.in);
-        
-        // Check if the input contains only letters
-        while (!input.matches("[a-zA-Z]+")) {
-           Sout.print(Constant.VALIDSTRING);
-            System.out.print("Enter a valid " +msg);
-            input = scanner.nextLine();
+        try {
+            if (!input.matches("[a-zA-Z]+")) {
+          
+                throw new CustomException(Constant.VALIDSTRING);
+            }
+            
+           
+        } catch (Exception e) {
+           throw e;
         }
-        
+        // Check if the input contains only letters
+       
         return input; // Return the valid string
     }
 

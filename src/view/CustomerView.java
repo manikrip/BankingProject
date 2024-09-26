@@ -1,11 +1,170 @@
 package view;
 
+
+
 import Middleware.CustomerMiddleware; // Importing middleware for customer operations
+import Middleware.ManagerMiddleware;
 import Utils.Constant;                // Importing constants for messages
 import Utils.Sout;                    // Importing utility for output operations
 import Utils.TakingInput;             // Importing utility for taking user input
 
 public class CustomerView {
+
+ public static String takingEmail() throws Exception {
+        String email = "";
+        while (true) {
+            try {
+                System.out.print(Constant.ADMINEMAIL);
+                email = TakingInput.input().nextLine(); // Read input
+                email = CustomerMiddleware.checkEmail(email); // Validate email
+                break; // Exit loop if email is valid
+            } catch (Exception e) {
+                System.out.println(e.getMessage()); // Show error message and re-prompt
+            }
+        }
+        return email;
+    }
+
+ public static String takingLoanNumber() throws Exception {
+    String loanNumber = "";
+    while (true) {
+        try {
+            System.out.print(Constant.LOANNUMBER);
+            loanNumber = TakingInput.input().nextLine();
+            loanNumber = ManagerMiddleware.checkPancard(loanNumber); // Assuming checkPancard was a mistake here
+            break; // Exit the loop if loan number is valid
+        } catch (Exception e) {
+            System.out.println(e.getMessage()); // Display the error message and prompt again
+        }
+    }
+    return loanNumber;
+}
+
+public static String takingPancard() throws Exception {
+    String pancard = "";
+    while (true) {
+        try {
+            System.out.print(Constant.PANCARD);
+            pancard = TakingInput.input().nextLine();
+            pancard = ManagerMiddleware.checkPancard(pancard);
+            break; // Exit loop if pancard is valid
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    return pancard;
+}
+
+public static String takingPassword() throws Exception {
+    String password = "";
+    while (true) {
+        try {
+            System.out.print(Constant.PASSWORD);
+            password = TakingInput.input().nextLine();
+            password = ManagerMiddleware.checkPassword(password);
+            break; // Exit loop if password is valid
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    return password;
+}
+
+public static String takingName() throws Exception {
+    String name = "";
+    while (true) {
+        try {
+            System.out.print(Constant.NAME);
+            name = TakingInput.input().nextLine();
+            name = ManagerMiddleware.checkName(name);
+            break; // Exit loop if name is valid
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    return name;
+}
+
+
+public static String takingBranchName() throws Exception {
+    String branchName = "";
+    while (true) {
+        try {
+            System.out.print(Constant.BRANCHNAME);
+            branchName = TakingInput.input().nextLine();
+            branchName = ManagerMiddleware.checkName(branchName);
+            break; // Exit loop if branch name is valid
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    return branchName;
+}
+
+public static String takingAccountNumber() throws Exception {
+    String accountNumber = "";
+    while (true) {
+        try {
+            System.out.print(Constant.ACCOUNTNUMBER);
+            accountNumber = TakingInput.input().nextLine();
+            accountNumber = ManagerMiddleware.checkAccountnumber(accountNumber);
+            break; // Exit loop if account number is valid
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    return accountNumber;
+}
+
+
+public static Integer takingPositiveAmount() {
+    Integer amount = 0;
+    while (true) {
+        try {
+            System.out.print(Constant.POSITIVEAMOUNT);
+            amount = TakingInput.input().nextInt();
+            amount = ManagerMiddleware.positivenumber(amount);
+            break; // Exit loop if amount is valid
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    return amount;
+}
+
+
+public static Integer takingPin() {
+    Integer pin = 0;
+    while (true) {
+        try {
+            System.out.print(Constant.PIN);
+            pin = TakingInput.input().nextInt(); // Get pin input
+            pin = (Integer) CustomerMiddleware.pinsize(pin); // Validate pin size
+            break; // Exit loop if pin is valid
+        } catch (Exception e) {
+            System.out.println(e.getMessage()); // Display error message and prompt again
+        }
+    }
+    return pin;
+}
+
+
+    public static String takingUsername() throws Exception {
+        String username = "";
+        while (true) {
+            try {
+                System.out.print(Constant.USERNAME);
+                username = TakingInput.input().nextLine();
+                username = ManagerMiddleware.checkName(username);
+                break; // Exit loop if username is valid
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        return username;
+    }
+    
+
 
     /*
      *********************************************************
@@ -39,12 +198,11 @@ public class CustomerView {
      */
     public static void usernameexit(String databaseName, Integer amountvalid) throws Exception {
         try {
-            Sout.print(Constant.EMAIL); // Prompt for email
-            String email = TakingInput.input().nextLine(); // Read email
-            Sout.print(Constant.USERNAME); // Prompt for username
-            String username = TakingInput.input().nextLine(); // Read username
-            Sout.print(Constant.PASSWORD); // Prompt for password
-            String password = TakingInput.input().nextLine(); // Read password
+            String email = takingEmail();
+          
+            String username = takingUsername();
+          
+            String password = takingPassword();
             CustomerMiddleware.customerexit(email, username, password, databaseName, amountvalid); // Call middleware
         } catch (Exception e) {
             throw e; // Rethrow exception for higher-level handling
@@ -63,12 +221,11 @@ public class CustomerView {
      */
     public static void usernamenotexit(String databaseName, Integer amountvalid) throws Exception {
         try {
-            Sout.print(Constant.EMAIL); // Prompt for email
-            String email = TakingInput.input().nextLine(); // Read email
-            Sout.print(Constant.USERNAME); // Prompt for username
-            String username = TakingInput.input().nextLine(); // Read username
-            Sout.print(Constant.PASSWORD); // Prompt for password
-            String password = TakingInput.input().nextLine(); // Read password
+            String email = takingEmail();
+           
+            String username = takingUsername();
+          
+            String password = takingPassword();
             CustomerMiddleware.customernotexit(email, username, password, databaseName, amountvalid); // Call middleware
         } catch (Exception e) {
             throw e; // Rethrow exception for higher-level handling
@@ -107,10 +264,9 @@ public class CustomerView {
      */
     public static void createPinSingle(String databasename, Integer amountvalid) throws Exception {
         try {
-            Sout.print(Constant.ACCOUNTNUMBER); // Prompt for account number
-            String accountNumber = TakingInput.input().nextLine(); // Read account number
-            Sout.print(Constant.PIN); // Prompt for PIN
-            Integer pin = TakingInput.input().nextInt(); // Read PIN
+          
+            String accountNumber = takingAccountNumber();
+            Integer pin = takingPin();
             CustomerMiddleware.createPinSingle(accountNumber, pin, databasename, amountvalid); // Call middleware
         } catch (Exception e) {
             throw e; // Rethrow exception for higher-level handling
@@ -128,10 +284,8 @@ public class CustomerView {
      */
     public static void createPinJoint(String databasename, Integer amountvalid) throws Exception {
         try {
-            Sout.print(Constant.ACCOUNTNUMBER); // Prompt for account number
-            String accountNumber = TakingInput.input().nextLine(); // Read account number
-            Sout.print(Constant.PIN); // Prompt for PIN
-            Integer pin = TakingInput.input().nextInt(); // Read PIN
+            String accountNumber = takingAccountNumber();
+            Integer pin = takingPin();
             CustomerMiddleware.createPinJoint(accountNumber, pin, databasename, amountvalid); // Call middleware
         } catch (Exception e) {
             throw e; // Rethrow exception for higher-level handling
@@ -150,12 +304,9 @@ public class CustomerView {
      */
     public static void withdrawSingle(String databasename, Integer amountvalid) throws Exception {
         try {
-            Sout.print(Constant.ACCOUNTNUMBER); // Prompt for account number
-            String accountNumber = TakingInput.input().nextLine(); // Read account number
-            Sout.print(Constant.PIN); // Prompt for PIN
-            Integer pin = TakingInput.input().nextInt(); // Read PIN
-            Sout.print(Constant.AMOUNT); // Prompt for withdrawal amount
-            Integer amount = TakingInput.input().nextInt(); // Read withdrawal amount
+            String accountNumber = takingAccountNumber();
+            Integer pin = takingPin();
+            Integer amount = takingPositiveAmount();
             CustomerMiddleware.withdrawSingle(accountNumber, pin, amount, databasename, amountvalid); // Call middleware
         } catch (Exception e) {
             throw e; // Rethrow exception for higher-level handling
@@ -174,12 +325,11 @@ public class CustomerView {
      */
     public static void withdrawJoint(String databasename, Integer amountvalid) throws Exception {
         try {
-            Sout.print(Constant.ACCOUNTNUMBER); // Prompt for account number
-            String accountNumber = TakingInput.input().nextLine(); // Read account number
-            Sout.print(Constant.PIN); // Prompt for PIN
-            Integer pin = TakingInput.input().nextInt(); // Read PIN
-            Sout.print(Constant.AMOUNT); // Prompt for withdrawal amount
-            Integer amount = TakingInput.input().nextInt(); // Read withdrawal amount
+            
+            String accountNumber = takingAccountNumber();
+            Integer pin = takingPin();
+     
+            Integer amount = takingPositiveAmount();
             CustomerMiddleware.withdrawJoint(accountNumber, pin, amount, databasename, amountvalid); // Call middleware
         } catch (Exception e) {
             throw e; // Rethrow exception for higher-level handling
@@ -198,12 +348,11 @@ public class CustomerView {
      */
     public static void loan(String databasename, Integer amountvalid) throws Exception {
         try {
-            Sout.print(Constant.PANCARD); // Prompt for PAN card number
-            String panNumber = TakingInput.input().nextLine(); // Read PAN card number
-            Sout.print(Constant.LOANNUMBER); // Prompt for loan number
-            String loanNumber = TakingInput.input().nextLine(); // Read loan number
-            Sout.print(Constant.AMOUNT); // Prompt for loan amount
-            Integer loanAmount = TakingInput.input().nextInt(); // Read loan amount
+            String panNumber = takingPancard();
+           
+            String loanNumber = takingAccountNumber();
+            
+            Integer loanAmount = takingPositiveAmount();
             CustomerMiddleware.createloan(panNumber, loanNumber, loanAmount, databasename, amountvalid); // Call middleware
         } catch (Exception e) {
             throw e; // Rethrow exception for higher-level handling
@@ -221,8 +370,7 @@ public class CustomerView {
      */
     public static void printpassbook(String databasename, Integer amountvalid) throws Exception {
         try {
-            Sout.print(Constant.PANCARD); // Prompt for PAN card number
-            String panNumber = TakingInput.input().nextLine(); // Read PAN card number
+            String panNumber = takingPancard();
             CustomerMiddleware.printpassbook(panNumber, databasename, amountvalid); // Call middleware
         } catch (Exception e) {
             throw e; // Rethrow exception for higher-level handling

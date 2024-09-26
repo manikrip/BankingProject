@@ -1,8 +1,7 @@
 package Validators;
 
-import java.util.Scanner; // Importing Scanner for user input
 import Utils.Constant; // Importing constants for standardized messages
-import Utils.Sout; // Importing custom print utility
+import Utils.CustomException;
 
 /*
  *********************************************************
@@ -23,20 +22,17 @@ public class Positivenumber implements Validator{
     }  
  
     @Override
-    public Integer Validator() {
-        Scanner scanner = new Scanner(System.in); // Creating a scanner object for input
-        
-        // Check if the number is positive
-        while (number <= 0) {
-            Sout.print(Constant.POSITIVEVALUE); // Prompt for positive number
-            // Validate that the input is an integer
-            while (!scanner.hasNextInt()) {
-                Sout.print(Constant.POSITIVEVALUE); // Prompt again if input is invalid
-                scanner.next(); // Clear invalid input
+    public Integer Validator() throws CustomException{
+        try {
+            if(number <= 0)
+            {
+                throw new CustomException(Constant.POSITIVEVALUE);
             }
-            number = scanner.nextInt(); // Read the integer input
+        } catch (Exception e) {
+            throw e;
         }
         
+        // Check if the number is positive
         return number; // Return the valid positive number
     }
     /*

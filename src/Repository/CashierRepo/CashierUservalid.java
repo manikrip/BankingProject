@@ -54,8 +54,9 @@ import Repository.DatabaseRepo.loginProcess;
                  boolean loginSuccessful = loginProcess.login(emp, databaseName);
  
                  if (loginSuccessful) {
+                    throw new CustomException(Constant.CASHIERLOGIN);
                      // If login is successful, forward to cashier functionality
-                     CashierView.cashierFunction(databaseName, amountvalid);
+                    
                  } else {
                      throw new CustomException(Constant.UNSUCCESSFULLYCREATED);
                  }

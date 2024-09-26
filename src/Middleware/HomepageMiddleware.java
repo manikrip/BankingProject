@@ -37,26 +37,26 @@
          try {
              switch (option) {
                  case "1":
-                     Sout.print(Constant.CUSTOMER);
+                     
                      HomePagerouting.Customerview(databaseName, amountvalid);
                      break;
                  case "2":
-                     Sout.print(Constant.MANAGER);
+                     
                      HomePagerouting.Managerview(databaseName, amountvalid);
                      break;
                  case "3":
-                     Sout.print(Constant.CASHIER);
+                    
                      HomePagerouting.Cashierview(databaseName, amountvalid);
                      break;
                  case "4":
-                     Sout.print(Constant.ADMIN);
+                    
                      HomePagerouting.Adminview(databaseName, amountvalid);
                      break;
                  case "5":
                      Sout.print(Constant.EXIT);
                      break;
                  default:
-                     Sout.print(Constant.WRONGOPTION);
+                     
                      HomePageview.homePage(databaseName, amountvalid);
                      break;
              }
@@ -65,4 +65,3 @@
          }
      }
  }
- 

@@ -63,10 +63,9 @@ import Utils.Constant;
              int employeeUpdateCount = insertEmployeeStatement.executeUpdate();
  
              // Check if both operations were successful
-             if (passwordUpdateCount > 0 && employeeUpdateCount > 0) {
-                 Sout.print(Constant.SUCCESSFULLYCREATED);
-             } else {
-                 throw new CustomException(Constant.UNSUCCESSFULLYCREATED);
+             if (passwordUpdateCount < 0 && employeeUpdateCount < 0) {
+                throw new CustomException(Constant.UNSUCCESSFULLYCREATED);
+                //Sout.print(Constant.SUCCESSFULLYCREATED);
              }
  
          } catch (SQLException e) {

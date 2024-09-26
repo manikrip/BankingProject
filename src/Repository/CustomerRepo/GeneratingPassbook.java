@@ -49,8 +49,7 @@ import Utils.Constant;
              
              // Check if transaction history is empty
              if (transactionHistory == null || transactionHistory.isEmpty()) {
-                 Sout.print(Constant.SUCCESSFULLYCREATED);
-                 return; // Stop execution if there's nothing to write
+                throw new CustomException(Constant.SUCCESSFULLYCREATED);
              }
  
              // Write the transaction history to the file
@@ -58,8 +57,7 @@ import Utils.Constant;
                  writer.write(transactionHistory);  // Write transaction history to the file
                  writer.flush();  // Ensure all data is written to the file before closing
                  
-                 // Call the customer view function after successfully writing the file
-                 CustomerView.customerFunction(databasename, amountvalid);
+                 throw new CustomException(Constant.SUCCESSFULLYCREATED);
              } catch (IOException e) {
                  throw new CustomException(Constant.UNSUCCESSFULLYCREATED);
              }

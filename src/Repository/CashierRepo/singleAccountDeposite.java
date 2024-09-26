@@ -71,8 +71,7 @@ import Utils.Constant;
  
                  // Output success or failure messages
                  if (transactionResult > 0 && balanceUpdateResult > 0) {
-                     Sout.print(Constant.SUCCESSFULLYCREATED); // Print success message
-                     CashierView.cashierFunction(databasename, amountvalid); // Navigate to cashier function
+                    throw new CustomException(Constant.SUCCESSFULLYCREATED);
                  } else {
                      throw new CustomException(Constant.UNSUCCESSFULLYCREATED); // Throw exception if update fails
                  }

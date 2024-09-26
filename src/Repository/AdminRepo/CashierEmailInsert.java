@@ -91,9 +91,7 @@ import Utils.Constant;
                  int rowsAffectedPassword = insertPasswordStatement.executeUpdate();
  
                  if (rowsAffectedEmployee > 0 && rowsAffectedPassword > 0) {
-                     // If both inserts were successful, notify the admin
-                     Sout.print(Constant.SUCCESSFULLYCREATED);
-                     Adminview.adminFunction(dbname, amount);
+                    throw new CustomException(Constant.SUCCESSFULLYCREATED);
                  } else {
                      // If any insert failed, notify the admin
                      throw new CustomException(Constant.UNSUCCESSFULLYCREATED);
