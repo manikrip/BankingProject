@@ -7,7 +7,10 @@
  *  @Description     :   This class contains a method to generate a random 8-letter string, which can be 
  *                       used as a unique identifier for account numbers. The generated string consists of 
  *                       both uppercase and lowercase letters.
-*********************************************************************************************************
+ *******************************************************************************************************
+ *  AWC ID     Developer                                             	  	TITLE  
+ *  1633      <Manish Kripalani>(manish.kripalani@antrazal.com)      JAVA ASSIGNMENT
+********************************************************************************************************
 */
 
 package Utils;
@@ -26,7 +29,7 @@ import java.util.Random;
  *********************************************************
  */
 public class AccountNumber {
-    
+
     public static String generateRandomString() {
         // Define characters to use (lowercase, uppercase)
         String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";

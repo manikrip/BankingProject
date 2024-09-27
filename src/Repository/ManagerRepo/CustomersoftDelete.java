@@ -7,6 +7,9 @@
  *  @Description     :   This class handles the soft deletion of customer accounts 
  *                       by marking them as inactive based on their PAN card number.
  *******************************************************************************************************
+ *  AWC ID     Developer                                             	  	TITLE  
+ *  1633      <Manish Kripalani>(manish.kripalani@antrazal.com)      JAVA ASSIGNMENT
+********************************************************************************************************
 */
 package Repository.ManagerRepo;
 
@@ -16,25 +19,23 @@ import java.sql.ResultSet;
 import Repository.DatabaseRepo.ConnectionDB;
 import Utils.Constant;
 import Utils.CustomException;
-import Utils.Sout;
-import view.ManagerView;
 
 public class CustomersoftDelete {
 
     /*
-    *********************************************************
-     *  @Method Name    :   activate
-     *  @Author         :   Manish Kripalani (manish.kripalani@antrazal.com)
-     *  @Company        :   Antrazal
-     *  @Description    :   Activates (soft deletes) a customer account by setting the 'isActive' flag to FALSE.
-     *                      It checks if the provided PAN card number exists in the database.
-     *  @param          :   databaseName (String) - The name of the database to connect to.
-     *  @param          :   amountvalid (Integer) - The amount associated with the customer's account.
-     *  @param          :   pancard (String) - The PAN card number of the customer.
-     *  @throws         :   Exception - If any general error occurs during execution.
-     *  @throws         :   CustomException - If the PAN card is invalid or if the update fails.
      *********************************************************
-    */
+     * @Method Name : activate
+     * @Author : Manish Kripalani (manish.kripalani@antrazal.com)
+     * @Company : Antrazal
+     * @Description : Activates (soft deletes) a customer account by setting the 'isActive' flag to FALSE. It checks if the provided PAN card number exists in the database.
+     * @param : databaseName (String) - The name of the database to connect to.
+     *          amountvalid (Integer) - The amount associated with the customer's account.
+     *          pancard (String) - The PAN card number of the customer.
+     * @throws : Exception - If any general error occurs during execution.
+     * @throws : CustomException - If the PAN card is invalid or if the update
+     * fails.
+     *********************************************************
+     */
     public static void activate(String databaseName, Integer amountvalid, String pancard)
             throws Exception, CustomException {
         try {
@@ -49,7 +50,7 @@ public class CustomersoftDelete {
             selectPreparedStatement = connection.prepareStatement(selectQuery);
             selectPreparedStatement.setString(1, pancard);
             resultSet = selectPreparedStatement.executeQuery();
- 
+
             // If the PAN card exists, perform a soft delete by setting 'isActive' to FALSE
             if (resultSet.next()) {
                 // Prepare the update query to set 'isActive' to FALSE
@@ -57,7 +58,7 @@ public class CustomersoftDelete {
                 updatePreparedStatement = connection.prepareStatement(updateQuery);
                 updatePreparedStatement.setString(1, pancard); // Set the PAN card in the update statement
                 int rowsAffected = updatePreparedStatement.executeUpdate();
- 
+
                 // Check if the update was successful
                 if (rowsAffected > 0) {
                     throw new CustomException(Constant.SUCCESSFULLYCREATED);

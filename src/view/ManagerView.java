@@ -1,14 +1,34 @@
 package view;
 
-
 import Middleware.ManagerMiddleware; // Importing middleware for manager operations
-import Utils.Constant;                // Importing constants for messages
-import Utils.Sout;                    // Importing utility for output operations
-import Utils.TakingInput;             // Importing utility for taking user input
-
+import Utils.Constant; // Importing constants for messages
+import Utils.Sout; // Importing utility for output operations
+import Utils.TakingInput; // Importing utility for taking user input
+/*
+*********************************************************************************************************
+ *  @Java Class Name :   ManagerView
+ *  @Author          :   Manish Kripalani (Manish.kripalani@antrazal.com)
+ *  @Company         :   Antrazal
+ *  @Date            :   17-09-2024
+ *  @Description     :   This class contains a view functionality.
+ *******************************************************************************************************
+ *  AWC ID     Developer                                             	  	TITLE  
+ *  1633      <Manish Kripalani>(manish.kripalani@antrazal.com)      JAVA ASSIGNMENT
+********************************************************************************************************
+*/
 public class ManagerView {
-
-     public static String takingEmail() throws Exception {
+/*
+*********************************************************
+ *  @Method Name    :   takingEmail
+ *  @Author         :   Manish Kripalani (Manish.kripalani@antrazal.com)
+ *  @Company        :   Antrazal
+ *  @Description    :   This method prompts the user to enter an email address. 
+ *                      It repeatedly asks for the email until a valid one is provided.
+ *                      The email is validated by the AdminMiddleware.
+ *  @return         :   String - Valid email address
+ *********************************************************
+ */
+    public static String takingEmail() throws Exception {
         String email = "";
         while (true) {
             try {
@@ -22,7 +42,17 @@ public class ManagerView {
         }
         return email;
     }
-
+/*
+*********************************************************
+ *  @Method Name    :   takingLoanNumber
+ *  @Author         :   Manish Kripalani (Manish.kripalani@antrazal.com)
+ *  @Company        :   Antrazal
+ *  @Description    :   This method prompts the user to enter a loan number. 
+ *                      It repeatedly asks for the loan number until a valid one is provided.
+ *                      The loan number is validated by the ManagerMiddleware.
+ *  @return         :   String - Valid loan number
+ *********************************************************
+ */
     public static String takingLoanNumber() throws Exception {
         String loanNumber = "";
         while (true) {
@@ -37,7 +67,17 @@ public class ManagerView {
         }
         return loanNumber;
     }
-    
+/*
+*********************************************************
+ *  @Method Name    :   takingPancard
+ *  @Author         :   Manish Kripalani (Manish.kripalani@antrazal.com)
+ *  @Company        :   Antrazal
+ *  @Description    :   This method prompts the user to enter a PAN card number. 
+ *                      It repeatedly asks for the PAN card number until a valid one is provided.
+ *                      The PAN card number is validated by the ManagerMiddleware.
+ *  @return         :   String - Valid PAN card number
+ *********************************************************
+ */
     public static String takingPancard() throws Exception {
         String pancard = "";
         while (true) {
@@ -52,7 +92,17 @@ public class ManagerView {
         }
         return pancard;
     }
-    
+/*
+*********************************************************
+ *  @Method Name    :   takingPassword
+ *  @Author         :   Manish Kripalani (Manish.kripalani@antrazal.com)
+ *  @Company        :   Antrazal
+ *  @Description    :   This method prompts the user to enter a password. 
+ *                      It repeatedly asks for the password until a valid one is provided.
+ *                      The password is validated by the ManagerMiddleware.
+ *  @return         :   String - Valid password
+ *********************************************************
+ */
     public static String takingPassword() throws Exception {
         String password = "";
         while (true) {
@@ -67,7 +117,17 @@ public class ManagerView {
         }
         return password;
     }
-    
+/*
+*********************************************************
+ *  @Method Name    :   takingName
+ *  @Author         :   Manish Kripalani (Manish.kripalani@antrazal.com)
+ *  @Company        :   Antrazal
+ *  @Description    :   This method prompts the user to enter a name. 
+ *                      It repeatedly asks for the name until a valid one is provided.
+ *                      The name is validated by the ManagerMiddleware.
+ *  @return         :   String - Valid name
+ *********************************************************
+ */
     public static String takingName() throws Exception {
         String name = "";
         while (true) {
@@ -82,7 +142,17 @@ public class ManagerView {
         }
         return name;
     }
-    
+/*
+*********************************************************
+ *  @Method Name    :   takingBranchName
+ *  @Author         :   Manish Kripalani (Manish.kripalani@antrazal.com)
+ *  @Company        :   Antrazal
+ *  @Description    :   This method prompts the user to enter a branch name. 
+ *                      It repeatedly asks for the branch name until a valid one is provided.
+ *                      The branch name is validated by the ManagerMiddleware.
+ *  @return         :   String - Valid branch name
+ *********************************************************
+ */
     public static String takingBranchName() throws Exception {
         String branchName = "";
         while (true) {
@@ -97,7 +167,17 @@ public class ManagerView {
         }
         return branchName;
     }
-    
+/*
+*********************************************************
+ *  @Method Name    :   takingAccountNumber
+ *  @Author         :   Manish Kripalani (Manish.kripalani@antrazal.com)
+ *  @Company        :   Antrazal
+ *  @Description    :   This method prompts the user to enter an account number. 
+ *                      It repeatedly asks for the account number until a valid one is provided.
+ *                      The account number is validated by the ManagerMiddleware.
+ *  @return         :   String - Valid account number
+ *********************************************************
+ */
     public static String takingAccountNumber() throws Exception {
         String accountNumber = "";
         while (true) {
@@ -112,7 +192,17 @@ public class ManagerView {
         }
         return accountNumber;
     }
-    
+/*
+*********************************************************
+ *  @Method Name    :   takingPositiveAmount
+ *  @Author         :   Manish Kripalani (Manish.kripalani@antrazal.com)
+ *  @Company        :   Antrazal
+ *  @Description    :   This method prompts the user to enter a positive amount.
+ *                      It repeatedly asks for the amount until a valid positive value is provided.
+ *                      The amount is validated by the ManagerMiddleware.
+ *  @return         :   Integer - Valid positive amount
+ *********************************************************
+ */
     public static Integer takingPositiveAmount() {
         Integer amount = 0;
         while (true) {
@@ -127,8 +217,18 @@ public class ManagerView {
         }
         return amount;
     }
-    
-
+/*
+*********************************************************
+ *  @Method Name    :   takingInitialAmount
+ *  @Author         :   Manish Kripalani (Manish.kripalani@antrazal.com)
+ *  @Company        :   Antrazal
+ *  @Description    :   This method prompts the user to enter the initial amount.
+ *                      It repeatedly asks for the amount until a valid value is provided.
+ *                      The amount is validated against a pre-defined valid amount by the ManagerMiddleware.
+ *  @param          :   amountValid (Integer) - The pre-defined valid amount
+ *  @return         :   Integer - Valid initial amount
+ *********************************************************
+ */
     public static Integer takingInitialAmount(Integer amountValid) {
         Integer amount = 0;
         while (true) {
@@ -143,8 +243,17 @@ public class ManagerView {
         }
         return amount;
     }
-    
-
+/*
+*********************************************************
+ *  @Method Name    :   takingUsername
+ *  @Author         :   Manish Kripalani (Manish.kripalani@antrazal.com)
+ *  @Company        :   Antrazal
+ *  @Description    :   This method prompts the user to enter a username. 
+ *                      It repeatedly asks for the username until a valid one is provided.
+ *                      The username is validated by the ManagerMiddleware.
+ *  @return         :   String - Valid username
+ *********************************************************
+ */
     public static String takingUsername() throws Exception {
         String username = "";
         while (true) {
@@ -159,15 +268,15 @@ public class ManagerView {
         }
         return username;
     }
-    
+
     /*
      *********************************************************
-     *  @Method Name    :   managerSignInandSignUp
-     *  @Description    :   This method handles the sign-in and sign-up process for the manager.
-     *                      It prompts the user for an option and validates it using middleware.
-     *  @param          :   databaseName - Name of the database
-     *                      amountvalid - Validated amount for operations
-     *  @return         :   void
+     * @Method Name : managerSignInandSignUp
+     * @Description : This method handles the sign-in and sign-up process for the manager.
+     * It prompts the user for an option and validates it using middleware.
+     * @param : databaseName - Name of the database
+     *          amountvalid - Validated amount for operations
+     * @return : void
      *********************************************************
      */
     public static void managerSignInandSignUp(String databaseName, Integer amountvalid) throws Exception {
@@ -182,12 +291,11 @@ public class ManagerView {
 
     /*
      *********************************************************
-     *  @Method Name    :   usernameexit
-     *  @Description    :   This method handles the process when the username exists.
-     *                      It collects email, username, and password, then calls the middleware.
-     *  @param          :   databaseName - Name of the database
-     *                      amountvalid - Validated amount for operations
-     *  @return         :   void
+     * @Method Name : usernameexit
+     * @Description : This method handles the process when the username exists. It collects email, username, and password, then calls the middleware.
+     * @param : databaseName - Name of the database
+     *          amountvalid - Validated amount for operations
+     * @return : void
      *********************************************************
      */
     public static void usernameexit(String databaseName, Integer amountvalid) throws Exception {
@@ -203,12 +311,11 @@ public class ManagerView {
 
     /*
      *********************************************************
-     *  @Method Name    :   usernamenotexit
-     *  @Description    :   This method handles the process when the username does not exist.
-     *                      It collects email, username, and password, then calls the middleware.
-     *  @param          :   databaseName - Name of the database
-     *                      amountvalid - Validated amount for operations
-     *  @return         :   void
+     * @Method Name : usernamenotexit
+     * @Description : This method handles the process when the username does not exist. It collects email, username, and password, then calls the middleware.
+     * @param : databaseName - Name of the database
+     *          amountvalid - Validated amount for operations
+     * @return : void
      *********************************************************
      */
     public static void usernamenotexit(String databaseName, Integer amountvalid) throws Exception {
@@ -224,12 +331,11 @@ public class ManagerView {
 
     /*
      *********************************************************
-     *  @Method Name    :   managerfunction
-     *  @Description    :   This method presents the manager with options to perform various functions.
-     *                      It calls the middleware based on the chosen option.
-     *  @param          :   databaseName - Name of the database
-     *                      amountvalid - Validated amount for operations
-     *  @return         :   void
+     * @Method Name : managerfunction
+     * @Description : This method presents the manager with options to perform various functions. It calls the middleware based on the chosen option.
+     * @param : databaseName - Name of the database
+     *          amountvalid - Validated amount for operations
+     * @return : void
      *********************************************************
      */
     public static void managerfunction(String databaseName, Integer amountvalid) {
@@ -245,22 +351,24 @@ public class ManagerView {
 
     /*
      *********************************************************
-     *  @Method Name    :   createSingleAccount
-     *  @Description    :   This method collects data to create a single account and calls the middleware.
-     *  @param          :   databaseName - Name of the database
-     *                      amountvalid - Validated amount for operations
-     *  @return         :   void
+     * @Method Name : createSingleAccount
+     * @Description : This method collects data to create a single account and calls
+     * the middleware.
+     * @param : databaseName - Name of the database
+     *          amountvalid - Validated amount for operations
+     * @return : void
      *********************************************************
      */
     public static void createSingleAccount(String databaseName, Integer amountvalid) throws Exception {
         try {
-            
+
             String branchName = takingBranchName();
             String name = takingName();
-            String pancard =  takingPancard();
+            String pancard = takingPancard();
             String email = takingEmail();
             Integer amount = takingInitialAmount(amountvalid);
-            ManagerMiddleware.createSingleAccount(databaseName, amountvalid, branchName, name, pancard, email, amount); // Call middleware
+            ManagerMiddleware.createSingleAccount(databaseName, amountvalid, branchName, name, pancard, email, amount); // Call
+                                                                                                                        // middleware
         } catch (Exception e) {
             throw e; // Rethrow exception for higher-level handling
         }
@@ -268,11 +376,11 @@ public class ManagerView {
 
     /*
      *********************************************************
-     *  @Method Name    :   createJointAccount
-     *  @Description    :   This method collects data to create a joint account and calls the middleware.
-     *  @param          :   databaseName - Name of the database
-     *                      amountvalid - Validated amount for operations
-     *  @return         :   void
+     * @Method Name : createJointAccount
+     * @Description : This method collects data to create a joint account and calls the middleware.
+     * @param : databaseName - Name of the database
+     *          amountvalid - Validated amount for operations
+     * @return : void
      *********************************************************
      */
     public static void createJointAccount(String databaseName, Integer amountvalid) throws Exception {
@@ -280,10 +388,11 @@ public class ManagerView {
             String branchName = takingBranchName();
             String name = takingName();
             String name1 = takingName();
-            String pancard =  takingPancard();
+            String pancard = takingPancard();
             String pancard1 = takingPancard();
             Integer amount = takingInitialAmount(amountvalid);
-            ManagerMiddleware.createJointAccount(databaseName, amountvalid, branchName, name, name1, pancard, pancard1, amount); // Call middleware
+            ManagerMiddleware.createJointAccount(databaseName, amountvalid, branchName, name, name1, pancard, pancard1,
+                    amount); // Call middleware
         } catch (Exception e) {
             throw e; // Rethrow exception for higher-level handling
         }
@@ -291,11 +400,11 @@ public class ManagerView {
 
     /*
      *********************************************************
-     *  @Method Name    :   updation
-     *  @Description    :   This method collects data for updating customer information.
-     *  @param          :   databaseName - Name of the database
-     *                      amountvalid - Validated amount for operations
-     *  @return         :   void
+     * @Method Name : updation
+     * @Description : This method collects data for updating customer information.
+     * @param : databaseName - Name of the database
+     *          amountvalid - Validated amount for operations
+     * @return : void
      *********************************************************
      */
     public static void updation(String databaseName, Integer amountvalid) throws Exception {
@@ -312,16 +421,16 @@ public class ManagerView {
 
     /*
      *********************************************************
-     *  @Method Name    :   softDelete
-     *  @Description    :   This method handles the soft deletion of a customer account based on PAN card number.
-     *  @param          :   databaseName - Name of the database
-     *                      amountvalid - Validated amount for operations
-     *  @return         :   void
+     * @Method Name : softDelete
+     * @Description : This method handles the soft deletion of a customer account based on PAN card number.
+     * @param : databaseName - Name of the database
+     *           amountvalid - Validated amount for operations
+     * @return : void
      *********************************************************
      */
     public static void softDelete(String databaseName, Integer amountvalid) throws Exception {
         try {
-         
+
             String pancard = takingPancard();
             ManagerMiddleware.softDelete(databaseName, amountvalid, pancard); // Call middleware
         } catch (Exception e) {
@@ -331,16 +440,16 @@ public class ManagerView {
 
     /*
      *********************************************************
-     *  @Method Name    :   approvedLoan
-     *  @Description    :   This method handles the approval or rejection of loans.
-     *  @param          :   databaseName - Name of the database
-     *                      amountvalid - Validated amount for operations
-     *  @return         :   void
+     * @Method Name : approvedLoan
+     * @Description : This method handles the approval or rejection of loans.
+     * @param : databaseName - Name of the database
+     *          amountvalid - Validated amount for operations
+     * @return : void
      *********************************************************
      */
     public static void approvedLoan(String databaseName, Integer amountvalid) throws Exception {
         try {
-           
+
             String loannumber = takingLoanNumber();
             Sout.print(Constant.APPROVEDREJECTED); // Prompt for approval/rejection status
             String approvedrejected = TakingInput.input().nextLine(); // Read approval/rejection input
@@ -352,16 +461,17 @@ public class ManagerView {
 
     /*
      *********************************************************
-     *  @Method Name    :   CustomerInformation
-     *  @Description    :   This method retrieves customer information based on PAN card number.
-     *  @param          :   databaseName - Name of the database
-     *                      amountvalid - Validated amount for operations
-     *  @return         :   void
+     * @Method Name : CustomerInformation
+     * @Description : This method retrieves customer information based on PAN card
+     * number.
+     * @param : databaseName - Name of the database
+     *          amountvalid - Validated amount for operations
+     * @return : void
      *********************************************************
      */
     public static void CustomerInformation(String databaseName, Integer amountvalid) throws Exception {
         try {
-  
+
             String pancard = takingPancard();
             ManagerMiddleware.CustomerInformation(databaseName, amountvalid, pancard); // Call middleware
         } catch (Exception e) {
@@ -371,16 +481,17 @@ public class ManagerView {
 
     /*
      *********************************************************
-     *  @Method Name    :   undoLastTransaction
-     *  @Description    :   This method allows the manager to undo the last transaction based on account number.
-     *  @param          :   databaseName - Name of the database
-     *                      amountvalid - Validated amount for operations
-     *  @return         :   void
+     * @Method Name : undoLastTransaction
+     * @Description : This method allows the manager to undo the last transaction
+     * based on account number.
+     * @param : databaseName - Name of the database
+     *          amountvalid - Validated amount for operations
+     * @return : void
      *********************************************************
      */
     public static void undoLastTransaction(String databaseName, Integer amountvalid) throws Exception {
         try {
-           
+
             String accountNumber = takingAccountNumber();
             ManagerMiddleware.undoLastTransaction(databaseName, amountvalid, accountNumber); // Call middleware
         } catch (Exception e) {
@@ -390,12 +501,12 @@ public class ManagerView {
 
     /*
      *********************************************************
-     *  @Method Name    :   printCustomerInformationl
-     *  @Description    :   This method prints customer information and calls the manager function.
-     *  @param          :   string - Information to print
-     *                      databaseName - Name of the database
-     *                      amountvalid - Validated amount for operations
-     *  @return         :   void
+     * @Method Name : printCustomerInformationl
+     * @Description : This method prints customer information and calls the manager function.
+     * @param : string - Information to print
+     *          databaseName - Name of the database
+     *          amountvalid - Validated amount for operations
+     * @return : void
      *********************************************************
      */
     public static void printCustomerInformationl(String string, String databaseName, Integer amountvalid) {

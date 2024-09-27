@@ -7,6 +7,9 @@
  *  @Description     :   This class is responsible for updating the joint account PIN for a customer.
  *                       It checks if the account number is valid and updates the PIN accordingly.
  *******************************************************************************************************
+ *  AWC ID     Developer                                             	  	TITLE  
+ *  1633      <Manish Kripalani>(manish.kripalani@antrazal.com)      JAVA ASSIGNMENT
+********************************************************************************************************
 */
 package Repository.CustomerRepo;
 
@@ -18,8 +21,6 @@ import java.sql.SQLException;
 import Repository.DatabaseRepo.ConnectionDB;
 import Utils.Constant;
 import Utils.CustomException;
-import Utils.Sout;
-import view.CustomerView;
 
 public class CustomerJointPin {
 

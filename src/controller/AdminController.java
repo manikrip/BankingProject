@@ -5,28 +5,36 @@ import Pojo.Employee; // Importing Employee class for employee-related operation
 import Service.Adminservice; // Importing Adminservice to handle business logic related to admin operations
 
 /*
- *********************************************************
- *  @Class Name     :   AdminController
- *  @Description    :   This class acts as a controller for 
+*********************************************************************************************************
+ *  @JAVA Class Name :   AdminController
+ *  @Author          :   <Manish Kripalani>(manish.kripalani@antrazal.com)
+ *  @Company         :   Antrazal
+ *  @Date            :   27-09-2024
+ *  @Description     :   This class acts as a controller for 
  *                      admin-related operations. It manages 
  *                      interactions between the user interface 
  *                      and the Adminservice for handling 
  *                      admin login, sign-in, branch creation, 
  *                      and managing emails for managers and cashiers.
- *********************************************************
- */
+ *******************************************************************************************************
+ *  AWC ID     Developer                                             	  	TITLE  
+ *  1633      <Manish Kripalani>(manish.kripalani@antrazal.com)      JAVA ASSIGNMENT
+********************************************************************************************************
+*/
 public class AdminController {
-
     /*
-     *********************************************************
+    *********************************************************
      *  @Method Name    :   adminLogin
-     *  @Description    :   Handles the admin login process.
+     *  @author         :   <Manish Kripalani>(manish.kripalani@antrazal.com)
+     *  @Company        :   Antrazal
+     *  @description    :   Handles the admin login process.
      *  @param          :   emp - Employee object containing 
      *                      admin details
      *                      dbname - Database name
-     *  @return         :   void
-     *********************************************************
-     */
+     *  @return         :   void               
+    ********************************************************
+    */
+
     public static void adminLogin(Employee emp, String dbname) throws Exception {
         try {
             Adminservice.adminLogin(emp, dbname);
@@ -38,6 +46,8 @@ public class AdminController {
     /*
      *********************************************************
      *  @Method Name    :   adminSignIn
+     *  @author         :   <Manish Kripalani>(manish.kripalani@antrazal.com)
+     *  @Company        :   Antrazal
      *  @Description    :   Handles the admin sign-in process.
      *  @param          :   emp - Employee object containing 
      *                      admin details
@@ -57,6 +67,8 @@ public class AdminController {
     /*
      *********************************************************
      *  @Method Name    :   managerMail
+     *  @author         :   <Manish Kripalani>(manish.kripalani@antrazal.com)
+     *  @Company        :   Antrazal
      *  @Description    :   Handles the creation or validation 
      *                      of manager email.
      *  @param          :   emp - Employee object containing 
@@ -77,6 +89,8 @@ public class AdminController {
     /*
      *********************************************************
      *  @Method Name    :   branchCreate
+     *  @author         :   <Manish Kripalani>(manish.kripalani@antrazal.com)
+     *  @Company        :   Antrazal
      *  @Description    :   Handles the creation of a new branch.
      *  @param          :   br - Branch object containing 
      *                      branch details
@@ -96,6 +110,8 @@ public class AdminController {
     /*
      *********************************************************
      *  @Method Name    :   cashierEmail
+     *  @author         :   <Manish Kripalani>(manish.kripalani@antrazal.com)
+     *  @Company        :   Antrazal
      *  @Description    :   Handles the creation or validation 
      *                      of cashier email.
      *  @param          :   emp - Employee object containing 

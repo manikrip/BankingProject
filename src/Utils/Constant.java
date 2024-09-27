@@ -1,13 +1,18 @@
 package Utils;
+
 /*
 *********************************************************************************************************
- *  @Java Class Name :   Constant
-  *  @Author         :   Manish Kripalani (Manish.kripalani@antrazal.com)
-      *  @Company        :   Antrazal
- *  @Date            :   24-09-2024
- *  @Description     :   This class represents a constant variable used in the program.
- *********************************************************************************************************
- */
+ *  @Java Class Name:   Constant
+ *  @Author         :   Manish Kripalani (Manish.kripalani@antrazal.com)
+ *  @Company        :   Antrazal
+ *  @Date           :   24-09-2024
+ *  @Description    :   This class represents a constant variable used in the program.
+ *******************************************************************************************************
+ *  AWC ID     Developer                                             	  	TITLE  
+ *  1633      <Manish Kripalani>(manish.kripalani@antrazal.com)      JAVA ASSIGNMENT
+********************************************************************************************************
+*/
+
 public class Constant {
     public static void viewDatabase() {
         System.out.println("Welcome to the Bank Application.");
@@ -45,6 +50,7 @@ public class Constant {
         System.out.println("8 => Return to the home page");
         System.out.println("Please enter your option:");
     }
+
     public static void customeroption() {
         // Display the customer page options
         System.out.println("1 => Create your PIN  ");
@@ -56,39 +62,41 @@ public class Constant {
         System.out.println("7 => Return to the home page ");
         System.out.println("Please enter the option: ");
     }
+
     public static void LoginSingupOption() {
 
         System.out.println("1 => If you have username or password");
         System.out.println("2 => If you don't have username or password you want to update");
         System.out.println("Please enter your option:");
     }
+
     public final static String PANCARDD = "Pan Card number must contain only letters and numbers. Please enter a valid Pan Card number:";
     public final static String PANCARDSIZE = "Pan Card number must be exactly 12 characters long. Please enter a valid Pan Card number:";
-    public final static String PINSIZE =  "Invalid input. Please enter exactly 4 digits:";
-    public final static String LETTERDIGIT ="Invalid input. Please enter only letters and digit.";
-    public final static String MINIMUMAMOUNT ="You are entering less amount then the minimum bank amount set";
-    public final static String POSITIVEVALUE ="Value must be positive. Please enter a positive value f ";
-    public final static String VALIDSTRING ="Invalid input. Please enter only letters.";
+    public final static String PINSIZE = "Invalid input. Please enter exactly 4 digits: ";
+    public final static String LETTERDIGIT = "Invalid input. Please enter only letters and digit. ";
+    public final static String MINIMUMAMOUNT = "You are entering less amount then the minimum bank amount set ";
+    public final static String POSITIVEVALUE = "Value must be positive. Please enter a positive value f  ";
+    public final static String VALIDSTRING = "Invalid input. Please enter only letters. ";
     public final static String EMAILREGEX = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$";
-     public final static String INVALIDEMAIL = "Invalid email format. Please enter a valid email address.";
-     public final static String VALIDEMAILENTER = "Enter the valid mail ";
+    public final static String INVALIDEMAIL = "Invalid email format. Please enter a valid email address. ";
+    public final static String VALIDEMAILENTER = "Enter the valid mail  ";
     public final static String UPDATEACCOUNT = "UPDATE account SET name = ?, email = ? WHERE pancard = ? AND isActive = TRUE";
     public final static String JOINTEMAILQUERY = "SELECT panCard FROM jointAccount WHERE panCard = ?";
     public final static String EMAILMODIFY = "1@gmail.com";
     public final static String EMAILJOINT = "SELECT email FROM jointAccount WHERE email = ?";
     public final static String PANCARDDIFFERENT = "Pancard numbers for both users should be different.";
     public final static String ACCOUNTINSERTQUERY = "INSERT INTO account (branchName, Name, panCard, Amount, email, accountNumber, isActive) VALUES (?, ?, ?, ?, ?, ?, TRUE)";
-    public final static String AMOUNT = "Enter the amount";
-    public final static String ACCOUNTNUMBER = "Enter the Accountnumber";
-    public final static String SETPIN= "UPDATE account SET pin = ? WHERE AccountNumber = ?";
-    public final static String SETJOINTPIN= "UPDATE jointaccount SET pin = ? WHERE AccountNumber = ?";
-    public final static String PIN = "Enter the 4 digit pin (Number only)";
-    public final static String INVALIDACCOUNTNUMBER = "Invalid Account number";
-    public final static String PANCARD = "Enter the pancard";
-    public final static String LOANNUMBER = "Enter the LOANNUMBER";
-    public final static String LOANINSERT ="INSERT INTO Loan (panCard, loanNumber, loanAmount,status) VALUES (?, ?, ?,?)";
-    public final static String APPROVEDREJECTED = "ENTER Approved OR Rejected";
-    public final static String INVALIDPANCARD = "Invalid Pan";
+    public final static String AMOUNT = "Enter the amount ";
+    public final static String ACCOUNTNUMBER = "Enter the Accountnumber ";
+    public final static String SETPIN = "UPDATE account SET pin = ? WHERE AccountNumber = ?";
+    public final static String SETJOINTPIN = "UPDATE jointaccount SET pin = ? WHERE AccountNumber = ?";
+    public final static String PIN = "Enter the 4 digit pin (Number only) ";
+    public final static String INVALIDACCOUNTNUMBER = "Invalid Account number ";
+    public final static String PANCARD = "Enter the pancard ";
+    public final static String LOANNUMBER = "Enter the LOANNUMBER ";
+    public final static String LOANINSERT = "INSERT INTO Loan (panCard, loanNumber, loanAmount,status) VALUES (?, ?, ?,?)";
+    public final static String APPROVEDREJECTED = "ENTER Approved OR Rejected ";
+    public final static String INVALIDPANCARD = "Invalid Pan ";
     public final static String MANAGERALREDYEXIT = "A manager already exists for this branch.";
     public final static String CASHIERALREDYEXIT = "A manager already exists for this branch.";
     public final static String BRANCHDOESNOTEXIT = "Invalid Branch ";
@@ -97,10 +105,10 @@ public class Constant {
     public final static String DATABASEERROR = "Database not created successfully";
     public final static String LIMITAMOUNT = "Set the minimum balance for the bank (must be a positive number): ";
     public final static String POSITIVEAMOUNT = "Number should be positive and greater than zero ";
-    public final static String VALIDOPTION = "Invalid input. Please enter OPTION ONLY";
-    public final static String VALIDINPUT = "Invalid input. Please enter letters only.";
+    public final static String VALIDOPTION = "Invalid input. Please enter OPTION ONLY ";
+    public final static String VALIDINPUT = "Invalid input. Please enter letters only. ";
     public final static String VALIDATEEMAIL = "SELECT email FROM Employee WHERE email = ? AND designation = ?";
-    public final static String VALIDATECUSTOMEREMAIL = "SELECT * FROM account WHERE email = ?" ;
+    public final static String VALIDATECUSTOMEREMAIL = "SELECT * FROM account WHERE email = ?";
     public final static String VALIDATELOGIN = "SELECT * FROM passwordstore WHERE username = ? AND password = ?";
     public final static String BRANCHQUERY = "SELECT branchName FROM branch WHERE branchName = ?";
     public final static String BRANCHNAMEDESIGNATION = "SELECT * FROM Employee WHERE branchName = ? AND designation = ?";
@@ -109,14 +117,14 @@ public class Constant {
     public final static String BRANCHINSERT = "INSERT INTO branch (branchName, City, Address) VALUES (?, ?, ?)";
     public final static String PANCARDCHECK = "SELECT * FROM account WHERE panCard = ? AND isActive = TRUE";
     public final static String INSERTTRANSACTION = "INSERT INTO transactions (accountnumber, amount, type, transaction_time) VALUES (?, ?, ?, ?)";
-    public final static String TRANSACTIONHISTORY="SELECT * FROM TRANSACTIONS WHERE AccountNumber = ?";
+    public final static String TRANSACTIONHISTORY = "SELECT * FROM TRANSACTIONS WHERE AccountNumber = ?";
     public final static String ACCOUNTCHECK = "SELECT * FROM account WHERE accountnumber = ? AND isActive = TRUE";
     public final static String JOINTACCOUNTCHECK = "SELECT * FROM jointaccount WHERE accountnumber = ?";
     public final static String UPDATECREDENTIAL = "UPDATE passwordstore SET username = ?, password = ? WHERE email = ?";
-     public final static String ACCOUNTUPDATETRANSACTION ="UPDATE account SET amount = ? WHERE accountnumber = ?";
-     public final static String ACCOUNTPIN = "SELECT * FROM account WHERE accountNumber = ? AND pin = ? AND isActive = TRUE";
-     public final static String JOINTACCOUNTPIN = "SELECT * FROM jointaccount WHERE accountNumber = ? AND pin = ?";
-     public final static String JOINTACCOUNTUPDATETRANSACTION ="UPDATE jointaccount SET amount = ? WHERE accountnumber = ?";
+    public final static String ACCOUNTUPDATETRANSACTION = "UPDATE account SET amount = ? WHERE accountnumber = ?";
+    public final static String ACCOUNTPIN = "SELECT * FROM account WHERE accountNumber = ? AND pin = ? AND isActive = TRUE";
+    public final static String JOINTACCOUNTPIN = "SELECT * FROM jointaccount WHERE accountNumber = ? AND pin = ?";
+    public final static String JOINTACCOUNTUPDATETRANSACTION = "UPDATE jointaccount SET amount = ? WHERE accountnumber = ?";
     public final static String createAccountTable = "CREATE TABLE IF NOT EXISTS account ("
             + "id INT AUTO_INCREMENT PRIMARY KEY,"
             + "name VARCHAR(255) NOT NULL,"
@@ -177,7 +185,7 @@ public class Constant {
     public final static String INSUFFICIENTAMOUNT = "Insufficient Amount !!!";
     public final static String UNSUCCESSFULTRANSACTION = "Cannot undo transaction. The last transaction was more than 10 minutes ago.";
     public final static String ACCOUNTEXIT = "account exit";
-      public final static String NOTRANSACTION = "No transaction records found for this email";
+    public final static String NOTRANSACTION = "No transaction records found for this email";
     public final static String LOANQUERY = "SELECT * FROM loan WHERE Status = ? AND Loannumber = ?";
     // SQL query to insert admin credentials into the 'passwordstore' table
     public final static String insertPasswordQuery = "INSERT INTO passwordstore (email, username, password) VALUES (?, ?, ?)";
@@ -185,7 +193,7 @@ public class Constant {
     // SQL query to insert admin details into the 'Employee' table with designation
     // as 'Admin'
     public final static String insertEmployeeQuery = "INSERT INTO Employee (email, name, designation) VALUES (?, ?, ?)";
-    public final static String VALIDEMAIL = "Invalid email";
+    public final static String VALIDEMAIL = "Invalid email ";
     public final static String ADMINNAME = "Enter the admin name  ";
     public final static String ADMINEMAIL = "Enter the admin email  ";
     public final static String ADMINUSERNAME = "Enter the admin username  ";
@@ -199,9 +207,9 @@ public class Constant {
     public final static String CASHIER = "You are enter into cashier  ";
     public final static String ADMIN = "You are enter into admin  ";
     public final static String EXIT = "You are existing!!! Thank you for using the application.";
-    public final static String WRONGOPTION = "You are entering the wrong option";
-    public final static String WRONGEMAIL = "You are entering the wrong email";
-    public final static String BRANCHNAME = "Enter the Branch name"  ;
+    public final static String WRONGOPTION = "You are entering the wrong option ";
+    public final static String WRONGEMAIL = "You are entering the wrong email ";
+    public final static String BRANCHNAME = "Enter the Branch name ";
     public final static String CITY = "Enter the CITY name  ";
     public final static String ADDRESS = "Enter the Address name  ";
     public final static String ADDRESSName = "Enter the correct Address name  ";
@@ -209,6 +217,7 @@ public class Constant {
     public final static String MANAGERLOGIN = "Manager Successfully login  ";
     public final static String CUSTOMERLOGIN = "Customer Successfully login  ";
     public final static String USERNAMEPASSWORD = "Successfully updated";
+
     public static void Homepageoption() {
         // Display the home page options
         System.out.println("1 => Customer");

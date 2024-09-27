@@ -6,12 +6,25 @@ import Pojo.JointAccount; // Importing JointAccount class
 import Pojo.Loan; // Importing Loan class
 import Service.ManagerService; // Importing ManagerService for business logic
 import view.ManagerView; // Importing ManagerView for presentation logic
-
-public class ManagaerController {
+/*
+*********************************************************************************************************
+ *  @JAVA Class Name :   ManagaerController
+ *  @Author          :   <Manish Kripalani>(manish.kripalani@antrazal.com)
+ *  @Company         :   Antrazal
+ *  @Date            :   27-09-2024
+ *  @Description     :   Habdles the controlling of the logic of manager
+ *******************************************************************************************************
+ *  AWC ID     Developer                                             	  	TITLE  
+ *  1633      <Manish Kripalani>(manish.kripalani@antrazal.com)      JAVA ASSIGNMENT
+********************************************************************************************************
+*/
+public class ManagerController {
 
     /*
      *********************************************************
      *  @Method Name    :   userexit
+     *  @author         :   <Manish Kripalani>(manish.kripalani@antrazal.com)
+     *  @Company        :   Antrazal
      *  @Description    :   This method handles user exit based on the employee object.
      *                      It calls the ManagerService to process the exit.
      *  @param          :   emp - Employee object
@@ -20,6 +33,9 @@ public class ManagaerController {
      *  @return         :   void
      *********************************************************
      */
+
+
+    
     public static void userexit(Employee emp, String databaseName, Integer amountvalid) throws Exception {
         try {
             ManagerService.userexit(emp, databaseName, amountvalid); // Call service to process user exit
@@ -31,6 +47,8 @@ public class ManagaerController {
     /*
      *********************************************************
      *  @Method Name    :   usernotexit
+     *  @author         :   <Manish Kripalani>(manish.kripalani@antrazal.com)
+     *  @Company        :   Antrazal
      *  @Description    :   This method handles cases when a user does not exist.
      *                      It calls the ManagerService to process the situation.
      *  @param          :   emp - Employee object
@@ -50,6 +68,8 @@ public class ManagaerController {
     /*
      *********************************************************
      *  @Method Name    :   createSAccount
+     *  @author         :   <Manish Kripalani>(manish.kripalani@antrazal.com)
+     *  @Company        :   Antrazal
      *  @Description    :   This method creates a single account using the provided customer details.
      *  @param          :   databaseName - Name of the database
      *                      amountvalid - Validated amount for operations
@@ -68,6 +88,8 @@ public class ManagaerController {
     /*
      *********************************************************
      *  @Method Name    :   createJAccount
+     *  @author         :   <Manish Kripalani>(manish.kripalani@antrazal.com)
+     *  @Company        :   Antrazal
      *  @Description    :   This method creates a joint account using the provided details.
      *  @param          :   databaseName - Name of the database
      *                      amountvalid - Validated amount for operations
@@ -90,6 +112,8 @@ public class ManagaerController {
     /*
      *********************************************************
      *  @Method Name    :   updationPancard
+     *  @author         :   <Manish Kripalani>(manish.kripalani@antrazal.com)
+     *  @Company        :   Antrazal
      *  @Description    :   This method updates the PAN card details for a customer.
      *  @param          :   databaseName - Name of the database
      *                      amountvalid - Validated amount for operations
@@ -108,6 +132,8 @@ public class ManagaerController {
     /*
      *********************************************************
      *  @Method Name    :   softDelete
+     *  @author         :   <Manish Kripalani>(manish.kripalani@antrazal.com)
+     *  @Company        :   Antrazal
      *  @Description    :   This method performs a soft delete operation using the provided PAN card number.
      *  @param          :   databaseName - Name of the database
      *                      amountvalid - Validated amount for operations
@@ -126,6 +152,8 @@ public class ManagaerController {
     /*
      *********************************************************
      *  @Method Name    :   approvedLoan
+     *  @author         :   <Manish Kripalani>(manish.kripalani@antrazal.com)
+     *  @Company        :   Antrazal
      *  @Description    :   This method approves a loan based on the provided loan details.
      *  @param          :   databaseName - Name of the database
      *                      amountvalid - Validated amount for operations
@@ -144,6 +172,8 @@ public class ManagaerController {
     /*
      *********************************************************
      *  @Method Name    :   CustomerInformationprint
+     *  @author         :   <Manish Kripalani>(manish.kripalani@antrazal.com)
+     *  @Company        :   Antrazal
      *  @Description    :   This method prints customer information based on the provided PAN card number.
      *  @param          :   databaseName - Name of the database
      *                      amountvalid - Validated amount for operations
@@ -162,6 +192,8 @@ public class ManagaerController {
     /*
      *********************************************************
      *  @Method Name    :   printCustomerInformation
+     *  @author         :   <Manish Kripalani>(manish.kripalani@antrazal.com)
+     *  @Company        :   Antrazal
      *  @Description    :   This method delegates the printing of customer information to the ManagerView.
      *  @param          :   string - Information to print
      *                      databaseName - Name of the database
@@ -180,6 +212,8 @@ public class ManagaerController {
     /*
      *********************************************************
      *  @Method Name    :   undoLastTransactioncustomer
+     *  @author         :   <Manish Kripalani>(manish.kripalani@antrazal.com)
+     *  @Company        :   Antrazal
      *  @Description    :   This method undoes the last transaction for a customer based on the account number.
      *  @param          :   databaseName - Name of the database
      *                      amountvalid - Validated amount for operations

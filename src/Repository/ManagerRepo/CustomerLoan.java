@@ -7,6 +7,9 @@
  *  @Description     :   This class handles the loan creation process for customers. 
  *                       It validates the customer's PAN card and inserts loan details into the database.
  *******************************************************************************************************
+ *  AWC ID     Developer                                             	  	TITLE  
+ *  1633      <Manish Kripalani>(manish.kripalani@antrazal.com)      JAVA ASSIGNMENT
+********************************************************************************************************
 */
 package Repository.ManagerRepo;
 
@@ -32,8 +35,8 @@ public class CustomerLoan {
      *                      If the loan amount is greater than 50,000, it sets the status to "Pending",
      *                      otherwise it sets the status to "Approved".
      *  @param          :   loan (Loan) - The loan object containing loan details.
-     *  @param          :   databasename (String) - The name of the database to connect to.
-     *  @param          :   amountvalid (Integer) - The valid amount for the transaction.
+     *                      databasename (String) - The name of the database to connect to.
+     *                      amountvalid (Integer) - The valid amount for the transaction.
      *  @throws         :   Exception - If any general error occurs during execution.
      *  @throws         :   CustomException - If the PAN card is invalid or if any database error occurs.
      *********************************************************

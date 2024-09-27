@@ -5,21 +5,29 @@ import Pojo.Transaction; // Importing Transaction class for transaction-related 
 import Service.CashierService; // Importing CashierService to handle business logic related to cashiers
 
 /*
- *********************************************************
- *  @Class Name     :   CashierController
+*********************************************************************************************************
+ *  @JAVA Class Name :   CashierController
+ *  @Author          :   <Manish Kripalani>(manish.kripalani@antrazal.com)
+ *  @Company         :   Antrazal
+ *  @Date            :   27-09-2024
  *  @Description    :   This class acts as a controller for 
  *                      cashier-related operations. It manages 
  *                      interactions between the user interface 
  *                      and the CashierService for handling 
  *                      user validation, deposits for single 
  *                      and joint accounts.
- *********************************************************
- */
+ *******************************************************************************************************
+ *  AWC ID     Developer                                             	  	TITLE  
+ *  1633      <Manish Kripalani>(manish.kripalani@antrazal.com)      JAVA ASSIGNMENT
+********************************************************************************************************
+*/
 public class CashierController {
 
     /*
      *********************************************************
      *  @Method Name    :   usernameexit
+     *  @author         :   <Manish Kripalani>(manish.kripalani@antrazal.com)
+     *  @Company        :   Antrazal
      *  @Description    :   Checks if the username exists in 
      *                      the database and processes accordingly.
      *  @param          :   emp - Employee object containing 
@@ -40,6 +48,8 @@ public class CashierController {
     /*
      *********************************************************
      *  @Method Name    :   usernamenotexit
+     *  @author         :   <Manish Kripalani>(manish.kripalani@antrazal.com)
+     *  @Company        :   Antrazal
      *  @Description    :   Checks if the username does not 
      *                      exist in the database and processes 
      *                      accordingly.
@@ -61,6 +71,8 @@ public class CashierController {
     /*
      *********************************************************
      *  @Method Name    :   singleAccountDeposite
+     *  @author         :   <Manish Kripalani>(manish.kripalani@antrazal.com)
+     *  @Company        :   Antrazal
      *  @Description    :   Processes a deposit transaction for 
      *                      a single account.
      *  @param          :   databasename - Database name
@@ -81,6 +93,8 @@ public class CashierController {
     /*
      *********************************************************
      *  @Method Name    :   jointAccountDeposite
+     *  @author         :   <Manish Kripalani>(manish.kripalani@antrazal.com)
+     *  @Company        :   Antrazal
      *  @Description    :   Processes a deposit transaction for 
      *                      a joint account.
      *  @param          :   databasename - Database name

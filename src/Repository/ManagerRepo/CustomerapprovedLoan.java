@@ -7,19 +7,20 @@
  *  @Description     :   This class handles the approval or rejection of customer loan requests.
  *                       It checks for pending loans and updates their status accordingly.
  *******************************************************************************************************
+ *  AWC ID     Developer                                             	  	TITLE  
+ *  1633      <Manish Kripalani>(manish.kripalani@antrazal.com)      JAVA ASSIGNMENT
+********************************************************************************************************
 */
 package Repository.ManagerRepo;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-
 import Pojo.Loan;
 import Repository.DatabaseRepo.ConnectionDB;
 import Utils.Constant;
 import Utils.CustomException;
-import Utils.Sout;
-import view.ManagerView;
+
 
 public class CustomerapprovedLoan {
 
@@ -31,10 +32,10 @@ public class CustomerapprovedLoan {
      *  @Description    :   Decides on the approval or rejection of a loan.
      *                      It checks for pending loans and updates their status in the database.
      *  @param          :   databaseName (String) - The name of the database to connect to.
-     *  @param          :   amountvalid (Integer) - The amount associated with the customer's account.
-     *  @param          :   loan (Loan) - The Loan object containing loan details such as loan number and status.
+     *                      amountvalid (Integer) - The amount associated with the customer's account.
+     *                      loan (Loan) - The Loan object containing loan details such as loan number and status.
      *  @throws         :   Exception - If any general error occurs during execution.
-     *  @throws         :   CustomException - If the loan status update fails or if no pending loan is found.
+     *                      CustomException - If the loan status update fails or if no pending loan is found.
      *********************************************************
     */
     public static void decide(String databaseName, Integer amountvalid, Loan loan) throws Exception, CustomException {

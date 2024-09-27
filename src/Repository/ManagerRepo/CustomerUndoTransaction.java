@@ -8,6 +8,9 @@
  *                       It checks if the transaction can be undone based on the time elapsed since it was made
  *                       and adjusts the account balance accordingly.
  *******************************************************************************************************
+ *  AWC ID     Developer                                             	  	TITLE  
+ *  1633      <Manish Kripalani>(manish.kripalani@antrazal.com)      JAVA ASSIGNMENT
+********************************************************************************************************
 */
 package Repository.ManagerRepo;
 
@@ -15,31 +18,27 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.time.LocalDateTime;
-
 import Repository.DatabaseRepo.ConnectionDB;
-
 import java.time.Duration;
 import Utils.Constant;
 import Utils.CustomException;
-import Utils.Sout;
-import view.ManagerView;
+
 
 public class CustomerUndoTransaction {
 
     /*
-    *********************************************************
-     *  @Method Name    :   undo
-     *  @Author         :   Manish Kripalani (manish.kripalani@antrazal.com)
-     *  @Company        :   Antrazal
-     *  @Description    :   Undoes the last transaction of the specified account if it was made within the last 10 minutes.
-     *                      Updates the account balance and optionally deletes the transaction record.
-     *  @param          :   databaseName (String) - The name of the database to connect to.
-     *  @param          :   amountvalid (Integer) - The valid amount for the transaction.
-     *  @param          :   validAccountnumber (String) - The valid account number for which the transaction is to be undone.
-     *  @throws         :   Exception - If any general error occurs during execution.
-     *  @throws         :   CustomException - If the account number is invalid or if the transaction cannot be undone.
      *********************************************************
-    */
+     * @Method Name : undo
+     * @Author : Manish Kripalani (manish.kripalani@antrazal.com)
+     * @Company : Antrazal
+     * @Description : Undoes the last transaction of the specified account if it was made within the last 10 minutes. Updates the account balance and optionally deletes the transaction record.
+     * @param : databaseName (String) - The name of the database to connect to.
+     *          amountvalid (Integer) - The valid amount for the transaction.
+     *          validAccountnumber (String) - The valid account number for which the transaction is to be undone.
+     * @throws : Exception - If any general error occurs during execution.
+     * @throws : CustomException - If the account number is invalid or if the transaction cannot be undone.
+     *********************************************************
+     */
     public static void undo(String databaseName, Integer amountvalid, String validAccountnumber)
             throws Exception, CustomException {
         try {
@@ -92,11 +91,11 @@ public class CustomerUndoTransaction {
 
                         if (deleteResult > 0) {
                             throw new CustomException(Constant.SUCCESSFULLYCREATED);
-                            
+
                         } else {
                             throw new CustomException(Constant.UNSUCCESSFULLYCREATED);
                         }
-                     
+
                     } else {
                         throw new CustomException(Constant.UNSUCCESSFULLYCREATED);
                     }

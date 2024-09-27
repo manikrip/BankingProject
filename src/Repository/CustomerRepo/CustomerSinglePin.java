@@ -7,6 +7,9 @@
  *  @Description     :   This class handles the process of updating the PIN for a single customer account.
  *                       It verifies the account number and updates the PIN in the database if the account is valid.
  *******************************************************************************************************
+ *  AWC ID     Developer                                             	  	TITLE  
+ *  1633      <Manish Kripalani>(manish.kripalani@antrazal.com)      JAVA ASSIGNMENT
+********************************************************************************************************
 */
 package Repository.CustomerRepo;
 
@@ -17,8 +20,6 @@ import java.sql.ResultSet;
 import Repository.DatabaseRepo.ConnectionDB;
 import Utils.Constant;
 import Utils.CustomException;
-import Utils.Sout;
-import view.CustomerView;
 
 public class CustomerSinglePin {
 

@@ -7,8 +7,11 @@
  *  @Description     :   This class handles the database view functionality. It prompts the user to input a 
  *                       database name, validates the database, and proceeds to further actions such as 
  *                       admin login and navigating to the homepage based on user inputs.
- *********************************************************************************************************
- */
+ *******************************************************************************************************
+ *  AWC ID     Developer                                             	  	TITLE  
+ *  1633      <Manish Kripalani>(manish.kripalani@antrazal.com)      JAVA ASSIGNMENT
+********************************************************************************************************
+*/
 
 package view;
 

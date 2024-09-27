@@ -7,20 +7,21 @@
  *  @Description     :   This class handles the validation of a customer's login credentials.
  *                       It checks if the provided email exists and verifies the password.
  *******************************************************************************************************
+ *  AWC ID     Developer                                             	  	TITLE  
+ *  1633      <Manish Kripalani>(manish.kripalani@antrazal.com)      JAVA ASSIGNMENT
+********************************************************************************************************
 */
 package Repository.CustomerRepo;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-
 import Pojo.Login;
 import Repository.DatabaseRepo.ConnectionDB;
 import Repository.DatabaseRepo.loginProcess;
 import Utils.Constant;
 import Utils.CustomException;
-import Utils.Sout;
-import view.CustomerView;
+
 
 public class CustomerUservalid {
 

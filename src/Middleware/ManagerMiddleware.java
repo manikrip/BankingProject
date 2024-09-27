@@ -1,4 +1,5 @@
-/*********************************************************************************************************
+/*
+********************************************************************************************************
  *  @Java Class Name :   ManagerMiddleware
  *  @Author          :   Manish Kripalani (Manish.kripalani@antrazal.com)
  *  @Company         :   Antrazal
@@ -6,7 +7,11 @@
  *  @Description     :   This class serves as middleware for managing manager-related operations,
  *                       including validating login options, creating accounts, and handling customer
  *                       information and loan approvals.
- *********************************************************************************************************/
+ *******************************************************************************************************
+ *  AWC ID     Developer                                             	  	TITLE  
+ *  1633      <Manish Kripalani>(manish.kripalani@antrazal.com)      JAVA ASSIGNMENT
+********************************************************************************************************
+*/
 
 package Middleware;
 
@@ -27,20 +32,13 @@ public class ManagerMiddleware extends BaseMiddleware {
     /*
      *********************************************************
      * @Method Name : validateLoginOption
-     * 
      * @Author : Manish Kripalani (Manish.kripalani@antrazal.com)
-     * 
      * @Company : Antrazal
-     * 
-     * @Description : Validates the login option for managers and calls the
-     * appropriate routing method.
-     * 
+     * @Description : Validates the login option for managers and calls the appropriate routing method.
      * @param : databaseName (String) - The name of the database
-     * amountvalid (Integer) - The amount validity check
-     * option (String) - The selected option
-     * 
+     *          amountvalid (Integer) - The amount validity check
+     *          option (String) - The selected option
      * @throws : Exception, CustomException - For various validation errors
-     * 
      * @return : void
      *********************************************************
      */
@@ -67,23 +65,15 @@ public class ManagerMiddleware extends BaseMiddleware {
     /*
      *********************************************************
      * @Method Name : managerexit
-     * 
      * @Author : Manish Kripalani (Manish.kripalani@antrazal.com)
-     * 
      * @Company : Antrazal
-     * 
-     * @Description : Handles the exit of a manager by validating the provided
-     * email, username,
-     * and password, then routing to the appropriate method.
-     * 
+     * @Description : Handles the exit of a manager by validating the provided email, username, and password, then routing to the appropriate method.
      * @param : email (String) - The manager's email
-     * username (String) - The manager's username
-     * password (String) - The manager's password
-     * dbname (String) - The database name
-     * amount (Integer) - Amount validity check
-     * 
+     *          username (String) - The manager's username
+     *          password (String) - The manager's password
+     *          dbname (String) - The database name
+     *          amount (Integer) - Amount validity check
      * @throws : Exception - For various validation errors
-     * 
      * @return : void
      *********************************************************
      */
@@ -101,23 +91,15 @@ public class ManagerMiddleware extends BaseMiddleware {
     /*
      *********************************************************
      * @Method Name : managernotexit
-     * 
      * @Author : Manish Kripalani (Manish.kripalani@antrazal.com)
-     * 
      * @Company : Antrazal
-     * 
-     * @Description : Handles the creation of a new manager by validating the
-     * provided details and
-     * routing to the appropriate method.
-     * 
+     * @Description : Handles the creation of a new manager by validating the provided details and routing to the appropriate method.
      * @param : email (String) - The manager's email
-     * username (String) - The manager's username
-     * password (String) - The manager's password
-     * dbname (String) - The database name
-     * amount (Integer) - Amount validity check
-     * 
+     *          username (String) - The manager's username
+     *          password (String) - The manager's password
+     *          dbname (String) - The database name
+     *          amount (Integer) - Amount validity check
      * @throws : Exception - For various validation errors
-     * 
      * @return : void
      *********************************************************
      */
@@ -135,19 +117,13 @@ public class ManagerMiddleware extends BaseMiddleware {
     /*
      *********************************************************
      * @Method Name : ManagerOption
-     * 
      * @Author : Manish Kripalani (Manish.kripalani@antrazal.com)
-     * 
      * @Company : Antrazal
-     * 
      * @Description : Executes the selected option for manager functionalities.
-     * 
      * @param : databaseName (String) - The name of the database
-     * amountvalid (Integer) - The amount validity check
-     * option (String) - The selected option
-     * 
+     *          amountvalid (Integer) - The amount validity check
+     *          option (String) - The selected option
      * @throws : Exception, CustomException - For various validation errors
-     * 
      * @return : void
      *********************************************************
      */
@@ -198,24 +174,17 @@ public class ManagerMiddleware extends BaseMiddleware {
     /*
      *********************************************************
      * @Method Name : createSingleAccount
-     * 
      * @Author : Manish Kripalani (Manish.kripalani@antrazal.com)
-     * 
      * @Company : Antrazal
-     * 
-     * @Description : Creates a single customer account after validating all input
-     * parameters.
-     * 
+     * @Description : Creates a single customer account after validating all input parameters.
      * @param : databaseName (String) - The name of the database
-     * amountvalid (Integer) - The amount validity check
-     * branchName (String) - The branch name for the account
-     * name (String) - The name of the customer
-     * pancard (String) - The customer's PAN card number
-     * email (String) - The customer's email
-     * amount (Integer) - The amount to deposit
-     * 
+     *          amountvalid (Integer) - The amount validity check
+     *          branchName (String) - The branch name for the account
+     *          name (String) - The name of the customer
+     *          pancard (String) - The customer's PAN card number
+     *          email (String) - The customer's email
+     *          amount (Integer) - The amount to deposit
      * @throws : Exception - For various validation errors
-     * 
      * @return : void
      *********************************************************
      */
@@ -235,25 +204,18 @@ public class ManagerMiddleware extends BaseMiddleware {
     /*
      *********************************************************
      * @Method Name : createJointAccount
-     * 
      * @Author : Manish Kripalani (Manish.kripalani@antrazal.com)
-     * 
      * @Company : Antrazal
-     * 
-     * @Description : Creates a joint customer account after validating all input
-     * parameters.
-     * 
+     * @Description : Creates a joint customer account after validating all input parameters.
      * @param : databaseName (String) - The name of the database
-     * amountvalid (Integer) - The amount validity check
-     * branchName (String) - The branch name for the account
-     * name (String) - The name of the first customer
-     * name1 (String) - The name of the second customer
-     * pancard (String) - The first customer's PAN card number
-     * pancard1 (String) - The second customer's PAN card number
-     * amount (Integer) - The amount to deposit
-     * 
+     *          amountvalid (Integer) - The amount validity check
+     *          branchName (String) - The branch name for the account
+     *          name (String) - The name of the first customer
+     *          name1 (String) - The name of the second customer
+     *          pancard (String) - The first customer's PAN card number
+     *          pancard1 (String) - The second customer's PAN card number
+     *          amount (Integer) - The amount to deposit
      * @throws : Exception - For various validation errors
-     * 
      * @return : void
      *********************************************************
      */
@@ -277,22 +239,15 @@ public class ManagerMiddleware extends BaseMiddleware {
     /*
      *********************************************************
      * @Method Name : updationPancard
-     * 
      * @Author : Manish Kripalani (Manish.kripalani@antrazal.com)
-     * 
      * @Company : Antrazal
-     * 
-     * @Description : Updates the PAN card information for a customer after
-     * validation.
-     * 
+     * @Description : Updates the PAN card information for a customer after validation.
      * @param : databaseName (String) - The name of the database
-     * amountvalid (Integer) - The amount validity check
-     * pancard (String) - The customer's new PAN card number
-     * name (String) - The customer's name
-     * email (String) - The customer's email
-     * 
+     *          amountvalid (Integer) - The amount validity check
+     *          pancard (String) - The customer's new PAN card number
+     *          name (String) - The customer's name
+     *          email (String) - The customer's email
      * @throws : Exception - For various validation errors
-     * 
      * @return : void
      *********************************************************
      */
@@ -310,20 +265,13 @@ public class ManagerMiddleware extends BaseMiddleware {
     /*
      *********************************************************
      * @Method Name : softDelete
-     * 
      * @Author : Manish Kripalani (Manish.kripalani@antrazal.com)
-     * 
      * @Company : Antrazal
-     * 
-     * @Description : Performs a soft delete on a customer account using the
-     * provided PAN card number.
-     * 
+     * @Description : Performs a soft delete on a customer account using the provided PAN card number.
      * @param : databaseName (String) - The name of the database
-     * amountvalid (Integer) - The amount validity check
-     * pancard (String) - The PAN card number of the customer
-     * 
+     *          amountvalid (Integer) - The amount validity check
+     *          pancard (String) - The PAN card number of the customer
      * @throws : Exception - For various validation errors
-     * 
      * @return : void
      *********************************************************
      */
@@ -339,21 +287,14 @@ public class ManagerMiddleware extends BaseMiddleware {
     /*
      *********************************************************
      * @Method Name : approvedLoan
-     * 
      * @Author : Manish Kripalani (Manish.kripalani@antrazal.com)
-     * 
      * @Company : Antrazal
-     * 
-     * @Description : Approves or rejects a loan based on the provided loan number
-     * and status.
-     * 
+     * @Description : Approves or rejects a loan based on the provided loan number and status.
      * @param : databaseName (String) - The name of the database
-     * amountvalid (Integer) - The amount validity check
-     * loannumber (String) - The loan number to be approved/rejected
-     * approvedrejected (String) - The approval status
-     * 
+     *          amountvalid (Integer) - The amount validity check
+     *          loannumber (String) - The loan number to be approved/rejected
+     *          approvedrejected (String) - The approval status
      * @throws : Exception, CustomException - For various validation errors
-     * 
      * @return : void
      *********************************************************
      */
@@ -375,20 +316,13 @@ public class ManagerMiddleware extends BaseMiddleware {
     /*
      *********************************************************
      * @Method Name : CustomerInformation
-     * 
      * @Author : Manish Kripalani (Manish.kripalani@antrazal.com)
-     * 
      * @Company : Antrazal
-     * 
-     * @Description : Retrieves and prints customer information based on the
-     * provided PAN card number.
-     * 
+     * @Description : Retrieves and prints customer information based on the provided PAN card number.
      * @param : databaseName (String) - The name of the database
-     * amountvalid (Integer) - The amount validity check
-     * pancard (String) - The PAN card number of the customer
-     * 
+     *          amountvalid (Integer) - The amount validity check
+     *          pancard (String) - The PAN card number of the customer
      * @throws : Exception - For various validation errors
-     * 
      * @return : void
      *********************************************************
      */
@@ -404,19 +338,13 @@ public class ManagerMiddleware extends BaseMiddleware {
     /*
      *********************************************************
      * @Method Name : undoLastTransaction
-     * 
      * @Author : Manish Kripalani (Manish.kripalani@antrazal.com)
-     * 
      * @Company : Antrazal
-     * 
      * @Description : Undoes the last transaction for the specified account number.
-     * 
      * @param : databaseName (String) - The name of the database
-     * amountvalid (Integer) - The amount validity check
-     * accountNumber (String) - The account number to undo the transaction for
-     * 
+     *          amountvalid (Integer) - The amount validity check
+     *          accountNumber (String) - The account number to undo the transaction for
      * @throws : Exception - For various validation errors
-     * 
      * @return : void
      *********************************************************
      */

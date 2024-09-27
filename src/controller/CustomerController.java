@@ -5,21 +5,29 @@ import Pojo.Login; // Importing Login class for user login operations
 import Service.CustomerService; // Importing CustomerService to handle business logic related to customers
 
 /*
- *********************************************************
- *  @Class Name     :   CustomerController
- *  @Description    :   This class acts as a controller for 
- *                      customer-related operations. It manages 
- *                      interactions between the user interface 
- *                      and the CustomerService for handling login, 
- *                      account management, withdrawals, loans, 
- *                      and passbook printing.
- *********************************************************
- */
+*********************************************************************************************************
+ *  @JAVA Class Name :   CustomerController
+ *  @Author          :   <Manish Kripalani>(manish.kripalani@antrazal.com)
+ *  @Company         :   Antrazal
+ *  @Date            :   27-09-2024
+ *  @Description     :   This class acts as a controller for 
+ *                       customer-related operations. It manages 
+ *                       interactions between the user interface 
+ *                       and the CustomerService for handling login, 
+ *                       account management, withdrawals, loans, 
+ *                       and passbook printing.
+ *******************************************************************************************************
+ *  AWC ID     Developer                                             	  	TITLE  
+ *  1633      <Manish Kripalani>(manish.kripalani@antrazal.com)      JAVA ASSIGNMENT
+********************************************************************************************************
+*/
 public class CustomerController {
 
     /*
      *********************************************************
      *  @Method Name    :   usernamenotexit
+     *  @author         :   <Manish Kripalani>(manish.kripalani@antrazal.com)
+     *  @Company        :   Antrazal
      *  @Description    :   Checks if the username does not exist 
      *                      in the database and processes accordingly.
      *  @param          :   log - Login object containing login details
@@ -39,6 +47,8 @@ public class CustomerController {
     /*
      *********************************************************
      *  @Method Name    :   usernameexit
+     *  @author         :   <Manish Kripalani>(manish.kripalani@antrazal.com)
+     *  @Company        :   Antrazal
      *  @Description    :   Checks if the username exists in the 
      *                      database and processes accordingly.
      *  @param          :   log - Login object containing login details
@@ -58,6 +68,8 @@ public class CustomerController {
     /*
      *********************************************************
      *  @Method Name    :   createPinSingle
+     *  @author         :   <Manish Kripalani>(manish.kripalani@antrazal.com)
+     *  @Company        :   Antrazal
      *  @Description    :   Creates a single account PIN for the user.
      *  @param          :   validAccountnumber - Account number for which to create the PIN
      *                      validpin - The PIN to be created
@@ -77,6 +89,8 @@ public class CustomerController {
     /*
      *********************************************************
      *  @Method Name    :   createPinJoint
+     *  @author         :   <Manish Kripalani>(manish.kripalani@antrazal.com)
+     *  @Company        :   Antrazal
      *  @Description    :   Creates a joint account PIN for the user.
      *  @param          :   validAccountnumber - Account number for which to create the PIN
      *                      validpin - The PIN to be created
@@ -96,6 +110,8 @@ public class CustomerController {
     /*
      *********************************************************
      *  @Method Name    :   withdrawSingle
+     *  @author         :   <Manish Kripalani>(manish.kripalani@antrazal.com)
+     *  @Company        :   Antrazal
      *  @Description    :   Handles withdrawal from a single account.
      *  @param          :   validAccountnumber - Account number to withdraw from
      *                      validpin - The PIN for account verification
@@ -116,6 +132,8 @@ public class CustomerController {
     /*
      *********************************************************
      *  @Method Name    :   withdrawJoint
+     *  @author         :   <Manish Kripalani>(manish.kripalani@antrazal.com)
+     *  @Company        :   Antrazal
      *  @Description    :   Handles withdrawal from a joint account.
      *  @param          :   validAccountnumber - Account number to withdraw from
      *                      validpin - The PIN for account verification
@@ -136,6 +154,8 @@ public class CustomerController {
     /*
      *********************************************************
      *  @Method Name    :   createLoan
+     *  @author         :   <Manish Kripalani>(manish.kripalani@antrazal.com)
+     *  @Company        :   Antrazal
      *  @Description    :   Processes loan creation for a customer.
      *  @param          :   loan - Loan object containing loan details
      *                      databasename - Database name
@@ -154,6 +174,8 @@ public class CustomerController {
     /*
      *********************************************************
      *  @Method Name    :   printpassbookCustomer
+     *  @author         :   <Manish Kripalani>(manish.kripalani@antrazal.com)
+     *  @Company        :   Antrazal
      *  @Description    :   Prints the passbook for the customer.
      *  @param          :   validpannumber - PAN number of the customer
      *                      databasename - Database name

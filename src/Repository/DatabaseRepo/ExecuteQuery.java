@@ -6,6 +6,9 @@
  *  @Date            :   17-09-2024
  *  @Description     :   This class provides utility methods for executing SQL queries using a given database connection.
  *******************************************************************************************************
+ *  AWC ID     Developer                                             	  	TITLE  
+ *  1633      <Manish Kripalani>(manish.kripalani@antrazal.com)      JAVA ASSIGNMENT
+********************************************************************************************************
 */
 package Repository.DatabaseRepo;
 
@@ -22,7 +25,7 @@ public class ExecuteQuery {
      *  @Company        :   Antrazal
      *  @Description    :   Executes a SQL UPDATE statement using the provided connection.
      *  @param          :   con (Connection) - The database connection to use.
-     *  @param          :   query (String) - The SQL UPDATE statement to be executed.
+     *                      query (String) - The SQL UPDATE statement to be executed.
      *  @throws         :   SQLException - If an error occurs while executing the query.
      *********************************************************
     */
@@ -41,7 +44,7 @@ public class ExecuteQuery {
      *  @Company        :   Antrazal
      *  @Description    :   Executes a SQL query statement using the provided connection.
      *  @param          :   con (Connection) - The database connection to use.
-     *  @param          :   query (String) - The SQL query statement to be executed.
+     *                      query (String) - The SQL query statement to be executed.
      *  @throws         :   SQLException - If an error occurs while executing the query.
      *********************************************************
     */
