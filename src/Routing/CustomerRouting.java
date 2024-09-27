@@ -104,8 +104,7 @@ public class CustomerRouting {
      * @Method Name : withdrawMoneySingle
      * @Author : Manish Kripalani (Manish.kripalani@antrazal.com)
      * @Company : Antrazal
-     * @Description : This method handles the withdrawal operation for a single account using the
-     * provided database name and valid amount.
+     * @Description : This method handles the withdrawal operation for a single account using the provided database name and valid amount.
      * @param : databasename (String) - The name of the database to be accessed.
      *          amountvalid (Integer) - The valid amount for the withdrawal operation.
      * @return : void
