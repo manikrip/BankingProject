@@ -180,9 +180,7 @@ public class CustomerRouting {
      * @Method Name : createPinSingle
      * @Author : Manish Kripalani (Manish.kripalani@antrazal.com)
      * @Company : Antrazal
-     * @Description : This method creates a PIN for a single account using the
-     * provided account number,
-     * valid PIN, database name, and valid amount.
+     * @Description : This method creates a PIN for a single account using the provided account number,valid PIN, database name, and valid amount.
      * @param : validAccountnumber (String) - The account number for which the PIN is to be created.
      *          validpin (Integer) - The valid PIN to be set.
      *          databasename (String) - The name of the database to be accessed.
